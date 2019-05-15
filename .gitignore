@@ -1,1 +1,51 @@
 notes.txt
+
+# server files
+
+src/server/log/*
+
+# Ignore bundler config.
+src/server/.bundle
+
+# Ignore the default SQLite database.
+src/server/db/*.sqlite3
+src/server/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+src/server/log/*
+src/server/tmp/*
+!src/server/log/.keep
+!src/server/tmp/.keep
+
+# Ignore uploaded files in development
+src/server/storage/*
+!src/server/storage/.keep
+
+src/server/.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+src/server/config/master.key
+
+# client files
+
+# dependencies
+src/client/geoparty/node_modules
+src/client/geoparty/.pnp
+src/client/geoparty/.pnp.js
+
+# testing
+src/client/geoparty/coverage
+
+# production
+src/client/geoparty/build
+
+# misc
+src/client/geoparty/.DS_Store
+src/client/geoparty/.env.local
+src/client/geoparty/.env.development.local
+src/client/geoparty/.env.test.local
+src/client/geoparty/.env.production.local
+
+src/client/geoparty/npm-debug.log*
+src/client/geoparty/yarn-debug.log*
+src/client/geoparty/yarn-error.log*
