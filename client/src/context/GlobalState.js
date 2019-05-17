@@ -18,7 +18,10 @@ const GlobalState = props => {
     })
   }
 
-  
+  const handleQuestionIndex = () => {
+    setQuestionIndex(questionIndex + 1)
+    setActiveQuestion(questions[questionIndex])
+  }
 
   return(
     <ShopContext.Provider
@@ -27,7 +30,8 @@ const GlobalState = props => {
         questionIndex,
         activeQuestion,
         loading,
-        fetchQuestions
+        fetchQuestions,
+        handleQuestionIndex
       }}>
       { props.children }
     </ShopContext.Provider>

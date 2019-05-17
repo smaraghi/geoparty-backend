@@ -6,12 +6,10 @@ import shopContext from '../context/shop-context';
 
 const TriviaContainer = () => {
   const context = useContext(shopContext)
-  // const index = questions.length > 0 ? questions[questionIndex] : {}
 
   useEffect( () => {
     context.fetchQuestions()
   }, [])
-
 
   return (
     context.loading ? 
