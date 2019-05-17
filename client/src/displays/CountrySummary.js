@@ -1,15 +1,23 @@
 
 import React from 'react'
+import { Card } from 'semantic-ui-react'
 
 const CountrySummary = props => {
 
   return (
-    <div>
-      Summary: <p>{props.countryData.profile}</p>
-      Capital: {props.countryData.capital}
-      Population: {props.countryData.population}
-      Area: {props.countryData.area}sq km
-    </div>
+    <Card>
+      <Card.Header>
+        Tuvalu
+      </Card.Header>
+      <Card.Meta>
+        Capital: {props.countryData.capital}
+        Population: {props.countryData.population}
+        Area: {props.countryData.area}sq km
+      </Card.Meta>
+      <Card.Description>
+        Summary: {props.countryData.profile}
+      </Card.Description>
+    </Card>
   )
 }
 
