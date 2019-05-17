@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Header } from 'semantic-ui-react'
 import FlashCardOptions from '../components/FlashCardOptions';
 import FlashCardContainer from './FlashCardContainer';
+import shopContext from '../context/shop-context';
 
 const TriviaContainer = () => {
-  const [questions, setQuestions] = useState([])
-  const [questionIndex, setQuestionIndex] = useState(0)
-  const [loading, setLoading] = useState(false)
-  const index = questions.length > 0 ? questions[questionIndex] : {}
+  const context = useContext(shopContext)
+  // const index = questions.length > 0 ? questions[questionIndex] : {}
 
   useEffect( () => {
-    setLoading(true)
-    fetch('http://localhost:3000/questions/get_trivia')
-    .then(res => res.json())
-    .then(questions => {
-      console.log(questions)
-      setQuestions(questions.results)
-      setLoading(false)
-    })
+    context.fetchQuestions()
   }, [])
 
 
   return (
-    loading ? 
+    context.loading ? 
     <h1>loading...</h1>
     :
     <div>
       <Header as='h4'>TRIVIA</Header>
-        {questions.map(q => <div>{q.question}</div>)}
         <div>*Progress Bar*</div>
-        <FlashCardContainer question={index} />
+        <FlashCardContainer />
         <FlashCardOptions />
     </div>
   )

@@ -1,16 +1,19 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import MainContainer from './containers/MainContainer';
+import GlobalState from './context/GlobalState';
 
 function App() {
   return (
-    <div className="App">
-     <Header />
-     <Navbar />
-     <MainContainer />
-    </div>
+    <GlobalState>
+      <div className="App">
+        <Header />
+        <Navbar />
+        <MainContainer />
+      </div>
+    </GlobalState>
   );
 }
 
