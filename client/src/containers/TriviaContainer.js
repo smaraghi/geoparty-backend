@@ -16,7 +16,7 @@ const TriviaContainer = () => {
   return (
     <div>
       <Header as='h6'>TRIVIA</Header>
-      {questions.map(q => <div>{q.question}</div>)}
+      // {questions.map(q => <div>{q.question}</div>)}
     </div>
   )
 

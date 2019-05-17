@@ -23,15 +23,15 @@ json['countries'].each do |k, v|
   comparison = geo['area']['comparative']
   climate = geo['climate']
   terrain = geo['terrain']
-  lowest_point = geo['elevation']['lowest_point']['name']
-  highest_point = geo['elevation']['highest_point']['name']
+  lowest_point = [geo['elevation']['lowest_point']['name'], geo['elevation']['lowest_point']['elevation']['value']].join(' - ')
+  highest_point = [geo['elevation']['highest_point']['name'], geo['elevation']['highest_point']['elevation']['value']].join(' - ')
   population = people['population']['total']
   population_rank = people['population']['global_rank']
   nationality = people['nationality']['noun']
   languages = people['languages']['language'].map{|i| i['name']}.join('-')
   religions = people['religions']['religion'].map{|i| i['name']}.join('-')
-  major_cities = people['major_urban_areas']['places'].map{|i| i['place']}
-  capital = people['major_urban_areas']['places'].select{|i| i['is_capital']}
+  major_cities = people['major_urban_areas']['places'].map{|i| i['place']}.join('-')
+  capital = people['major_urban_areas']['places'].select{|i| i['is_capital']}[0]['place']
 
   begin
     border_countries = geo['land_boundaries']['border_countries'].map{|i| i['country']}.join('-')

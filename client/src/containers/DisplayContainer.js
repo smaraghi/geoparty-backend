@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import CountryHeader from '../displays/CountryHeader';
+import CountryHeader from '../displays/CountryHeader'
+import CountrySummary from '../displays/CountrySummary'
+import CountryGeography from '../displays/CountryGeography'
+import CountryPeople from '../displays/CountryPeople'
 import { withRouter } from 'react-router-dom'
 
 const DisplayContainer = (props) => {
@@ -29,6 +32,9 @@ const DisplayContainer = (props) => {
     :
     <div>
       <CountryHeader countryName={countryData.name} />
+      <CountrySummary countryData={countryData} />
+      <CountryGeography countryData={countryData} />
+      <CountryPeople countryData={countryData} />
     </div>
   )
 }
