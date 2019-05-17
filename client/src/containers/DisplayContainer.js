@@ -11,15 +11,16 @@ const DisplayContainer = (props) => {
     return country.charAt(0).toUpperCase() + country.slice(1)
   }
 
-  useEffect(() => {
-    setLoading(true)
-    fetch('http://localhost:3000/countries/' + getCountry())
-    .then(res => res.json())
-    .then(country => {
-      setCountryData(country)
-      setLoading(false)
-    })
-  }, [])
+    useEffect(() => {
+      setLoading(true)
+      fetch('http://localhost:3000/countries/' + getCountry())
+      .then(res => res.json())
+      .then(country => {
+        console.log('fetch call made')
+        setCountryData(country)
+        setLoading(false)
+      })
+    }, [])
 
 
   return(
