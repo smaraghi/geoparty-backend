@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Header } from 'semantic-ui-react'
 import FlashCardOptions from '../components/FlashCardOptions';
 import FlashCardContainer from './FlashCardContainer';
