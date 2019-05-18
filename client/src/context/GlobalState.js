@@ -36,7 +36,7 @@ const GlobalState = props => {
   }
 
   const addPreviousQuestion = (question) => {
-    setPreviousQuestions([...previousQuestions], question)
+    setPreviousQuestions([...previousQuestions, question])
   }
 
   return(

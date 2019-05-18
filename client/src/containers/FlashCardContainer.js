@@ -14,12 +14,7 @@ const FlashCardContainer = () => {
 
   const handleAction = (answer) => {
     context.handleAnswered(true)
-    if(checkAnswer(answer)){
-      console.log('party')
-    } else {
-      console.log('incorrect')
-    }
-
+    checkAnswer(answer) ? console.log('party') : console.log('incorrect')
   }
 
   return(
@@ -35,7 +30,6 @@ const FlashCardContainer = () => {
     :
     <Card id="flash-card">
       <Card.Content>
-        {context.questionIndex}
         {context.activeQuestion.question}
       </Card.Content>
       <Card.Content id='card-button-container'>

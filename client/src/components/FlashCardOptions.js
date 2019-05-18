@@ -11,6 +11,7 @@ const FlashCardOptions = () => {
       <Button onClick={() => {
         context.handleAnswered(false)
         context.handleQuestionIndex()
+        context.addPreviousQuestion(context.activeQuestion)
       }}>Next Question</Button>
     </div>
   )
