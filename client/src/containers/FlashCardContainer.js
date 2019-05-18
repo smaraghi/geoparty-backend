@@ -5,7 +5,6 @@ import { isEmpty } from 'lodash'
 import '../css/FlashCard.css'
 
 const FlashCardContainer = () => {
-  // const [answered, setAnswered] = useState(false)
   const context = useContext(shopContext)
   const answers = isEmpty(context.activeQuestion) ? ['', '', '', ''] : context.activeQuestion.incorrect_answers.concat([context.activeQuestion.correct_answer])
 
@@ -14,7 +13,6 @@ const FlashCardContainer = () => {
   }
 
   const handleAction = (answer) => {
-    // setAnswered(true)
     context.handleAnswered(true)
     if(checkAnswer(answer)){
       console.log('party')

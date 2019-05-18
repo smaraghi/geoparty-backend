@@ -3,10 +3,12 @@ import ShopContext from './shop-context'
 
 const GlobalState = props => {
   const [questions, setQuestions] = useState([])
+  const [loading, setLoading] = useState(false)
   const [questionIndex, setQuestionIndex] = useState(0)
   const [activeQuestion, setActiveQuestion] = useState({})
   const [answered, setAnswered] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [modalStatus, setModalStatus] = useState(false)
+  const [previousQuestions, setPreviousQuestions] = useState([])
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -30,6 +32,14 @@ const GlobalState = props => {
     setAnswered(bool)
   }
 
+  const toggleModalStatus = () => {
+    setModalStatus(!modalStatus)
+  }
+
+  const addPreviousQuestion = (question) => {
+    setPreviousQuestions([...previousQuestions], question)
+  }
+
   return(
     <ShopContext.Provider
       value={{
@@ -38,9 +48,13 @@ const GlobalState = props => {
         activeQuestion,
         answered,
         loading,
+        modalStatus,
+        previousQuestions,
         fetchQuestions,
         handleQuestionIndex,
-        handleAnswered
+        handleAnswered,
+        addPreviousQuestion,
+        toggleModalStatus
       }}>
       { props.children }
     </ShopContext.Provider>
