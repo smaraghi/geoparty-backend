@@ -14,7 +14,7 @@ const FlashCardContainer = () => {
 
   const handleAction = (answer) => {
     context.handleAnswered(true)
-    checkAnswer(answer) ? console.log('party') : console.log('incorrect')
+    checkAnswer(answer) ? context.handleCorrectAnswer(true) : console.log('yo')
   }
 
   return(

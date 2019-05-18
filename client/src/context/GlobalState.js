@@ -7,6 +7,7 @@ const GlobalState = props => {
   const [questionIndex, setQuestionIndex] = useState(0)
   const [activeQuestion, setActiveQuestion] = useState({})
   const [answered, setAnswered] = useState(false)
+  const [correct, setCorrect] = useState(false)
   const [modalStatus, setModalStatus] = useState(false)
   const [previousQuestions, setPreviousQuestions] = useState([])
 
@@ -35,8 +36,13 @@ const GlobalState = props => {
     setModalStatus(!modalStatus)
   }
 
-  const addPreviousQuestion = (question) => {
+  const addPreviousQuestion = (question, correct) => {
+    question.correct = correct
     setPreviousQuestions([...previousQuestions, question])
+  }
+
+  const handleCorrectAnswer = bool => {
+    setCorrect(bool)
   }
 
   return(
@@ -46,6 +52,7 @@ const GlobalState = props => {
         questionIndex,
         activeQuestion,
         answered,
+        correct,
         loading,
         modalStatus,
         previousQuestions,
@@ -53,7 +60,8 @@ const GlobalState = props => {
         handleQuestionIndex,
         handleAnswered,
         addPreviousQuestion,
-        toggleModalStatus
+        toggleModalStatus,
+        handleCorrectAnswer
       }}>
       { props.children }
     </ShopContext.Provider>
