@@ -1,3 +1,8 @@
+#flash-card{
+  width: 600px;
+  height: 300px;
+}
+
 #card-button-container{
   width: 80%;
   margin: auto;
@@ -6,24 +11,23 @@
 #card-button-one{
   display: block;
   width: 100%;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 #card-button-two{
   display: block;
   width: 100%;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 #card-button-three{
   display: block;
   width: 100%;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 #card-button-four{
   display: block;
   width: 100%;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-
