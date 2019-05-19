@@ -6,7 +6,14 @@ import '../css/FlashCard.css'
 
 const FlashCardContainer = () => {
   const context = useContext(shopContext)
-  const answers = isEmpty(context.activeQuestion) ? ['', '', '', ''] : context.activeQuestion.incorrect_answers.concat([context.activeQuestion.correct_answer])
+  
+  const answers = () => {
+    if(isEmpty(context.activeQuestion)) {
+      return ['', '', '', '']
+    } else {
+      return context.activeQuestion.shuffled_answers
+    }
+  }
 
   const checkAnswer = (answer) => {
     return answer === context.activeQuestion.correct_answer ? true : false
@@ -40,10 +47,10 @@ const FlashCardContainer = () => {
         {formatHTML(context.activeQuestion.question)}
       </Card.Content>
       <Card.Content id='card-button-container'>
-        <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers[0])}>A {formatHTML(answers[0])}</Button>
-        <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers[1])}>B {formatHTML(answers[1])}</Button>
-        <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers[2])}>C {formatHTML(answers[2])}</Button>
-        <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers[3])}>D {formatHTML(answers[3])}</Button>
+        <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers()[0])}>A {formatHTML(answers()[0])}</Button>
+        <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers()[1])}>B {formatHTML(answers()[1])}</Button>
+        <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers()[2])}>C {formatHTML(answers()[2])}</Button>
+        <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers()[3])}>D {formatHTML(answers()[3])}</Button>
       </Card.Content>
     </Card>
   )
