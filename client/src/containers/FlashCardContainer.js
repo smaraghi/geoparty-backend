@@ -17,26 +17,30 @@ const FlashCardContainer = () => {
     checkAnswer(answer) ? context.handleCorrectAnswer(true) : console.log('yo')
   }
 
+  const formatHTML = (text) => {
+    return <span dangerouslySetInnerHTML={{__html: text}} />
+  }
+
   return(
     context.answered ?
     <Card id="flash-card">
       <Card.Content>
-        {context.activeQuestion.question}
+        {formatHTML(context.activeQuestion.question)}
       </Card.Content>
       <Card.Content id='correct-answer-container'>
-        {context.activeQuestion.correct_answer}
+        {formatHTML(context.activeQuestion.correct_answer)}
       </Card.Content>
     </Card>
     :
     <Card id="flash-card">
       <Card.Content>
-        {context.activeQuestion.question}
+        {formatHTML(context.activeQuestion.question)}
       </Card.Content>
       <Card.Content id='card-button-container'>
-        <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers[0])}>A {answers[0]}</Button>
-        <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers[1])}>B {answers[1]}</Button>
-        <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers[2])}>C {answers[2]}</Button>
-        <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers[3])}>D {answers[3]}</Button>
+        <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers[0])}>A {formatHTML(answers[0])}</Button>
+        <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers[1])}>B {formatHTML(answers[1])}</Button>
+        <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers[2])}>C {formatHTML(answers[2])}</Button>
+        <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers[3])}>D {formatHTML(answers[3])}</Button>
       </Card.Content>
     </Card>
   )
