@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ShopContext from './shop-context'
 
 const GlobalState = props => {
+  const [user, setUser] = useState({})
   const [questions, setQuestions] = useState([])
   const [loading, setLoading] = useState(false)
   const [questionIndex, setQuestionIndex] = useState(0)
@@ -22,6 +23,34 @@ const GlobalState = props => {
       setActiveQuestion(questions.results[0])
       setLoading(false)
     })
+  }
+
+  const authenticatingUser = (username, password) => {
+    fetch('http://localhost:3000/login', {
+      method: "POST",
+      headers:{"Content-Type":"application/json", "Accept": "application/json"},
+      body:JSON.stringify({
+        username: username,
+        password: password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.authenticated) {
+        setUser(data.user)
+        localStorage.setItem('token', data.token)
+      } else {
+        alert('Incorrect username or password')
+      }
+    })
+  }
+
+  const authenticatingToken = (token) => {
+    fetch('http://localhost:3000/verify_token', {
+      headers:{"Authentication": `Bearer ${token}`}
+    })
+    .then(res => res.json())
+    .then(user => setUser(user))
   }
 
   // sets the activeQuestion to the next index in the questions array, then updates questionIndex to match the new activeQuestion
@@ -48,9 +77,9 @@ const GlobalState = props => {
   }
 
   const incrementProgress = () => {
-    let newProgress = percentage + 10 
+    let newProgress = percentage + 10
     if(newProgress === 100){
-      newProgress = 0 
+      newProgress = 0
       incrementStarBar()
     }
     setPercentage(newProgress)
@@ -63,6 +92,7 @@ const GlobalState = props => {
   return(
     <ShopContext.Provider
       value={{
+        user,
         questions,
         questionIndex,
         activeQuestion,
@@ -73,6 +103,8 @@ const GlobalState = props => {
         percentage,
         starAmount,
         previousQuestions,
+        authenticatingUser,
+        authenticatingToken,
         fetchQuestions,
         handleQuestionIndex,
         handleAnswered,
