@@ -14,7 +14,10 @@ const FlashCardContainer = () => {
 
   const handleAction = (answer) => {
     context.handleAnswered(true)
-    checkAnswer(answer) ? context.handleCorrectAnswer(true) : console.log('yo')
+    if (checkAnswer(answer)){
+      context.handleCorrectAnswer(true)
+      context.incrementProgress()
+    } 
   }
 
   const formatHTML = (text) => {

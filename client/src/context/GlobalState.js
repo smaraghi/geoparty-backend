@@ -10,6 +10,7 @@ const GlobalState = props => {
   const [correct, setCorrect] = useState(false)
   const [modalStatus, setModalStatus] = useState(false)
   const [previousQuestions, setPreviousQuestions] = useState([])
+  const [percentage, setPercentage] = useState(0)
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -45,6 +46,14 @@ const GlobalState = props => {
     setCorrect(bool)
   }
 
+  const incrementProgress = () => {
+    let newProgress = percentage + 10 
+    if(newProgress === 100){
+      newProgress = 0 
+    }
+    setPercentage(newProgress)
+  }
+
   return(
     <ShopContext.Provider
       value={{
@@ -55,13 +64,15 @@ const GlobalState = props => {
         correct,
         loading,
         modalStatus,
+        percentage,
         previousQuestions,
         fetchQuestions,
         handleQuestionIndex,
         handleAnswered,
         addPreviousQuestion,
         toggleModalStatus,
-        handleCorrectAnswer
+        handleCorrectAnswer,
+        incrementProgress
       }}>
       { props.children }
     </ShopContext.Provider>

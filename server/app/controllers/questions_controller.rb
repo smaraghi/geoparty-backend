@@ -4,7 +4,7 @@ require 'open-uri'
 class QuestionsController < ApplicationController
 
   def get_trivia
-    amount = 10
+    amount = 100
     category = 22
     difficulty = 'medium'
     type = 'multiple'

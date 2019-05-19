@@ -4,6 +4,7 @@ import FlashCardOptions from '../components/FlashCardOptions';
 import FlashCardContainer from './FlashCardContainer';
 import PreviousQuestionsModal from '../components/PreviousQuestionsModal'
 import shopContext from '../context/shop-context';
+import ProgressBar from '../components/ProgressBar';
 
 const TriviaContainer = () => {
   const context = useContext(shopContext)
@@ -18,7 +19,7 @@ const TriviaContainer = () => {
     :
     <div>
       <Header as='h4'>TRIVIA</Header>
-        <div>*Progress Bar*</div>
+        <ProgressBar />
         <FlashCardContainer />
         <PreviousQuestionsModal />
         <FlashCardOptions />
