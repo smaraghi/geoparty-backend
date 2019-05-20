@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react'
-import { Header } from 'semantic-ui-react'
 import FlashCardOptions from '../components/FlashCardOptions';
 import FlashCardContainer from './FlashCardContainer';
 import PreviousQuestionsModal from '../components/PreviousQuestionsModal'

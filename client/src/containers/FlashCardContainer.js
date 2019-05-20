@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Card, Button, Transition } from 'semantic-ui-react'
 import shopContext from '../context/shop-context'
 import { isEmpty } from 'lodash'

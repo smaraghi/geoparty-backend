@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Flag, Header } from 'semantic-ui-react'
+import { List, Flag } from 'semantic-ui-react'
 
 const CountrySidebarItem = props => {
   return(
