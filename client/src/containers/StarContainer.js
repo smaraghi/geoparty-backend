@@ -7,7 +7,7 @@ const StarContainer = () => {
 
   return(
     <div>
-      {context.starAmount.map((s, index) => <Star key={index} /> )}
+      {Array.from(Array(context.starAmount), (_, i) => <span key={i}><Star /></span>)}
     </div>
   )
 }

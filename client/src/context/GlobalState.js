@@ -12,7 +12,7 @@ const GlobalState = props => {
   const [modalStatus, setModalStatus] = useState(false)
   const [previousQuestions, setPreviousQuestions] = useState([])
   const [percentage, setPercentage] = useState(0)
-  const [starAmount, setStarAmount] = useState([])
+  const [starAmount, setStarAmount] = useState(0)
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -38,6 +38,8 @@ const GlobalState = props => {
     .then(data => {
       if (data.authenticated) {
         setUser(data.user)
+        setStarAmount(Math.floor(data.user.correct_answers / 10))
+        setPercentage((data.user.correct_answers % 10) * 10)
         localStorage.setItem('token', data.token)
       } else {
         alert('Incorrect username or password')
@@ -50,7 +52,11 @@ const GlobalState = props => {
       headers:{"Authentication": `Bearer ${token}`}
     })
     .then(res => res.json())
-    .then(user => setUser(user))
+    .then(user => {
+      setUser(user)
+      setStarAmount(Math.floor(user.correct_answers / 10))
+      setPercentage((user.correct_answers % 10) * 10)
+    })
   }
 
   // sets the activeQuestion to the next index in the questions array, then updates questionIndex to match the new activeQuestion
@@ -86,7 +92,7 @@ const GlobalState = props => {
   }
 
   const incrementStarBar = () => {
-    setStarAmount([...starAmount, 1])
+    setStarAmount(starAmount + 1)
   }
 
   return(

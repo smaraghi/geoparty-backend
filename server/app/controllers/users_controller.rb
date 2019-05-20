@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     render json: {total: @user.total_questions, correct: @user.correct_answers}
   end
 
-
+  def save_score
+    
+  end
 
   def token
     token = request.headers["Authentication"].split(' ')[1]
