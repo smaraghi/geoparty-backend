@@ -1,0 +1,15 @@
+#country-header{
+  font-size: 5em;
+  text-align: center;
+}
+
+#country-summary{
+  width: 85%;
+  margin: auto;
+}
+
+#country-geography{
+  margin-top: 20px;
+  width: 92%;
+  margin: auto;
+}

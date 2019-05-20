@@ -3,7 +3,9 @@ import {Header} from 'semantic-ui-react'
 
 const CountryHeader = (props) => {
   return(
-    <Header as='h1'>{props.countryName}</Header>
+    <Header id='country-header' as='h1'>
+      {props.countryName}
+    </Header>
   )
 }
 

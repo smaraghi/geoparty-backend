@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import DisplayContainer from './DisplayContainer';
 import CountrySelector from '../components/CountrySelector';
 import { Grid } from 'semantic-ui-react'
+import '../css/Country.css'
 
 const CountryContainer = () => {
   const [activeCountry, setActiveCountry] = useState('Spain')
