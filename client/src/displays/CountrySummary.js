@@ -7,7 +7,6 @@ const CountrySummary = props => {
   return (
     <Card>
       <Card.Header>
-        Tuvalu
       </Card.Header>
       <Card.Meta>
         Capital: {props.countryData.capital}

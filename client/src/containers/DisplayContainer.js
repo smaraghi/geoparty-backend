@@ -2,28 +2,20 @@ import React, { useState, useEffect } from 'react'
 import CountryHeader from '../displays/CountryHeader'
 import CountrySummary from '../displays/CountrySummary'
 import CountryGeography from '../displays/CountryGeography'
-import { withRouter } from 'react-router-dom'
 
 const DisplayContainer = (props) => {
   const [countryData, setCountryData] = useState({})
   const [loading, setLoading] = useState(false)
 
-  const getCountry = () => {
-    let country = props.location.pathname.split('/')[2]
-    return country.charAt(0).toUpperCase() + country.slice(1)
-  }
-
     useEffect(() => {
       setLoading(true)
-      fetch('http://localhost:3000/countries/' + getCountry())
+      fetch(`http://localhost:3000/countries/${props.activeCountry}`)
       .then(res => res.json())
       .then(country => {
-        console.log('fetch call made')
         setCountryData(country)
         setLoading(false)
       })
-    }, [])
-
+    }, [props.activeCountry])
 
   return(
     loading ?
@@ -37,4 +29,4 @@ const DisplayContainer = (props) => {
   )
 }
 
-export default withRouter(DisplayContainer)
+export default DisplayContainer

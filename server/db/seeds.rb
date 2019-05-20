@@ -1,4 +1,3 @@
-
 require 'json'
 
 Country.destroy_all
@@ -10,12 +9,15 @@ req = open("#{Rails.root}/db/factbook.json")
 body = req.read
 json = JSON.parse(body)
 
+names = []
+
 json['countries'].each do |k, v|
   data = v['data']
   geo = data['geography']
   people = data['people']
 
   name = data['name']
+  names << name 
   next if name == 'World'
   profile = data['introduction']['background']
 
@@ -71,3 +73,5 @@ json['countries'].each do |k, v|
     capital: capital
   )
 end
+
+puts names

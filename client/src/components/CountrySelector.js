@@ -1,8 +1,18 @@
 import React from 'react'
+import countryData from '../data/countryMenu'
+import { Dropdown } from 'semantic-ui-react'
 
-const CountrySelector = () => {
+const CountrySelector = props => {
   return(
-    <div></div>
+    <Dropdown 
+      placeholder='Select Country'
+      search
+      selection
+      options={countryData()}
+      onChange={(e) => {
+        props.handleCountry(e.target.innerText)
+      }}
+    /> 
   )
 }
 

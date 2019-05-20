@@ -8,7 +8,7 @@ const MainContainer = () => {
   return(
     <div>
       <Switch>
-        <Route path='/country/:name' component={CountryContainer}/>
+        <Route exact path='/country' component={CountryContainer}/>
         <Route exact path='/trivia' component={TriviaContainer} />
         <Route excat path='/profile' component={ProfileContainer} />
       </Switch>
