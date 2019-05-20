@@ -6,7 +6,7 @@ import '../css/FlashCard.css'
 
 const FlashCardContainer = () => {
   const context = useContext(shopContext)
-  
+
   const answers = () => {
     if(isEmpty(context.activeQuestion)) {
       return ['', '', '', '']
@@ -24,7 +24,10 @@ const FlashCardContainer = () => {
     if (checkAnswer(answer)){
       context.handleCorrectAnswer(true)
       context.incrementProgress()
-    } 
+      context.saveScore(context.user, true)
+    } else {
+      context.saveScore(context.user, false)
+    }
   }
 
   const formatHTML = (text) => {

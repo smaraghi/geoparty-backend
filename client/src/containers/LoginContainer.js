@@ -42,6 +42,7 @@ const LoginContainer = () => {
         </Form.Group>
         <Button type="submit" inverted color="vk">Login</Button>
       </Form>
+      <Button onClick={context.logoutUser} >Logout</Button>
     </Segment>
   )
 }

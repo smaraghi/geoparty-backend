@@ -59,6 +59,21 @@ const GlobalState = props => {
     })
   }
 
+  const logoutUser = () => {
+    setUser({})
+    localStorage.removeItem('token')
+  }
+
+  const saveScore = (user, bool) => {
+    fetch(`http://localhost:3000/users/${user.id}`, {
+      method: 'PATCH',
+      headers: {"Content-Type":"application/json", Accept:"application/json"},
+      body: JSON.stringify({
+        correct: bool
+      })
+    })
+  }
+
   // sets the activeQuestion to the next index in the questions array, then updates questionIndex to match the new activeQuestion
   const handleQuestionIndex = () => {
     setActiveQuestion(questions[questionIndex + 1])
@@ -111,9 +126,11 @@ const GlobalState = props => {
         previousQuestions,
         authenticatingUser,
         authenticatingToken,
+        logoutUser,
         fetchQuestions,
         handleQuestionIndex,
         handleAnswered,
+        saveScore,
         addPreviousQuestion,
         toggleModalStatus,
         handleCorrectAnswer,

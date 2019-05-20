@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   def create
   end
 
-  def get_score
-    @user = User.find(params: [:id])
-    render json: {total: @user.total_questions, correct: @user.correct_answers}
-  end
-
-  def save_score
-    
+  def update
+    @user = User.find(params[:id])
+    @user.total_questions += 1
+    if params[:correct]
+      @user.correct_answers += 1
+    end
+    @user.save
   end
 
   def token
