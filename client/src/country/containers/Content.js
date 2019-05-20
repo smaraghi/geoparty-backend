@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import CountryHeader from '../displays/CountryHeader'
-import CountrySummary from '../displays/CountrySummary'
-import CountryGeography from '../displays/CountryGeography'
+import Title from '../components/Title'
+import Summary from '../components/Summary'
+import Geography from '../components/Geography'
 
-const DisplayContainer = (props) => {
+const Content = (props) => {
   const [countryData, setCountryData] = useState({})
   const [loading, setLoading] = useState(false)
 
@@ -22,11 +22,11 @@ const DisplayContainer = (props) => {
     <h1>loading...</h1>
     :
     <div>
-      <CountryHeader countryName={countryData.name} />
-      <CountrySummary countryData={countryData} />
-      <CountryGeography countryData={countryData} />
+      <Title countryName={countryData.name} />
+      <Summary countryData={countryData} />
+      <Geography countryData={countryData} />
     </div>
   )
 }
 
-export default DisplayContainer
+export default Content

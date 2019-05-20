@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Button, Grid } from 'semantic-ui-react'
-import shopContext from '../context/shop-context'
+import shopContext from '../../context/shop-context'
 
-const FlashCardOptions = () => {
+const Options = () => {
   const context = useContext(shopContext)
 
   return(
@@ -22,4 +22,4 @@ const FlashCardOptions = () => {
   )
 }
 
-export default FlashCardOptions
+export default Options

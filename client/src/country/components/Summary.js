@@ -1,8 +1,7 @@
-
 import React from 'react'
 import { Segment } from 'semantic-ui-react'
 
-const CountrySummary = props => {
+const Summary = props => {
 
   return (
     <Segment id='country-summary'>
@@ -11,4 +10,4 @@ const CountrySummary = props => {
   )
 }
 
-export default CountrySummary
+export default Summary

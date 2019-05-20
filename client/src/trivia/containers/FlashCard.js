@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Card, Button, Transition } from 'semantic-ui-react'
-import shopContext from '../context/shop-context'
+import shopContext from '../../context/shop-context'
 import { isEmpty } from 'lodash'
-import '../css/FlashCard.css'
+import '../../css/FlashCard.css'
 
-const FlashCardContainer = () => {
+const FlashCard = () => {
   const context = useContext(shopContext)
 
   const flipCard = () => {
@@ -67,4 +67,4 @@ const FlashCardContainer = () => {
   )
 }
 
-export default FlashCardContainer
+export default FlashCard

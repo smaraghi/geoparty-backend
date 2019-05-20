@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Flag } from 'semantic-ui-react'
 
-const CountrySidebarItem = props => {
+const SidebarItem = props => {
   return(
     <List.Item onClick={() => props.setActiveCountry(props.country.text)}>
       <Flag name={props.country.flag}/>
@@ -10,4 +10,4 @@ const CountrySidebarItem = props => {
   )
 }
 
-export default CountrySidebarItem
+export default SidebarItem

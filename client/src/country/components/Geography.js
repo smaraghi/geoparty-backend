@@ -2,7 +2,7 @@
 import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
 
-const CountryGeography = props => {
+const Geography = props => {
    const {location, continent, area, area_rank, comparison, border_countries, climate, terrain, lowest_point, highest_point, natural_resources, major_cities, capital, population} = props.countryData
 
   return (
@@ -72,4 +72,4 @@ const CountryGeography = props => {
   )
 }
 
-export default CountryGeography
+export default Geography

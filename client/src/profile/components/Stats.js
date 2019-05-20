@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ProfileStats = () => {
+const Stats = () => {
   return(
     <div>Party!</div>
   )
 }
 
-export default ProfileStats
+export default Stats

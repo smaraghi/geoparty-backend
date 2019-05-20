@@ -1,9 +1,8 @@
-
 import React, { useContext, useState } from 'react'
 import shopContext from '../context/shop-context'
 import { Segment, Form, Button } from 'semantic-ui-react'
 
-const LoginContainer = () => {
+const Login = () => {
   const context = useContext(shopContext)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -47,4 +46,4 @@ const LoginContainer = () => {
   )
 }
 
-export default LoginContainer
+export default Login

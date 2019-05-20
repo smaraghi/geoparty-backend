@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import shopContext from '../context/shop-context'
+import shopContext from '../../context/shop-context'
 import { Modal, Button, Item } from 'semantic-ui-react'
-import PreviousQuestionItem from './PreviousQuestionItem'
+import PreviousQuestionItem from '../components/PreviousQuestionItem'
 
-const PreviousQuestionsModal = () => {
+const PreviousQuestions = () => {
   const context = useContext(shopContext)
 
   return (
@@ -21,4 +21,4 @@ const PreviousQuestionsModal = () => {
   )
 }
 
-export default PreviousQuestionsModal
+export default PreviousQuestions

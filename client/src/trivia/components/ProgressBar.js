@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import shopContext from '../context/shop-context'
-import '../css/ProgressBar.css'
+import shopContext from '../../context/shop-context'
+import '../../css/ProgressBar.css'
 import Filler from './Filler';
 
 const ProgressBar = () => {

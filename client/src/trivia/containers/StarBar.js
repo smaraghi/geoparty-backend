@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Star from '../components/Star';
-import shopContext from '../context/shop-context';
+import shopContext from '../../context/shop-context';
 
-const StarContainer = () => {
+const StarBar = () => {
   const context = useContext(shopContext)
 
   return(
@@ -12,4 +12,4 @@ const StarContainer = () => {
   )
 }
 
-export default StarContainer
+export default StarBar

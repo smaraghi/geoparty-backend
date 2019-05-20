@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ProfileOptions = () => {
+const Options = () => {
   return(
     <div>Options?!</div>
   )
 }
 
-export default ProfileOptions
+export default Options
