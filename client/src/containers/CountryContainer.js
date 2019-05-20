@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
 import DisplayContainer from './DisplayContainer';
-import CountrySelector from '../components/CountrySelector';
+import CountrySidebarContainer from './CountrySidebarContainer';
 import { Grid } from 'semantic-ui-react'
 import '../css/Country.css'
 
 const CountryContainer = () => {
   const [activeCountry, setActiveCountry] = useState('Spain')
 
-  const handleCountry = (country) => {
-    setActiveCountry(country)
-  }
-
   return(
     <Grid>
       <Grid.Column width={3}  id='party'>
-        <CountrySelector handleCountry={handleCountry}/>
+        <CountrySidebarContainer setActiveCountry={setActiveCountry}/>
       </Grid.Column>
       <Grid.Column width={13}>
         <DisplayContainer activeCountry={activeCountry}/>
