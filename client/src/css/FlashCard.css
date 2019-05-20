@@ -1,6 +1,7 @@
 #flash-card{
-  width: 600px;
-  height: 300px;
+  margin: 80px auto 0px auto;
+  width: 800px;
+  height: 450px;
 }
 
 #card-button-container{

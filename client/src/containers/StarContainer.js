@@ -6,7 +6,7 @@ const StarContainer = () => {
   const context = useContext(shopContext)
 
   return(
-    <div>
+    <div id="star-bar">
       {Array.from(Array(context.starAmount), (_, i) => <span key={i}><Star /></span>)}
     </div>
   )

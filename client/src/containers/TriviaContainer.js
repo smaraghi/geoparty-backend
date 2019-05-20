@@ -19,12 +19,11 @@ const TriviaContainer = () => {
     <h1>loading...</h1>
     :
     <div>
-      <Header as='h4'>TRIVIA</Header>
-        <ProgressBar />
-        <StarContainer />
-        <FlashCardContainer />
-        <PreviousQuestionsModal />
-        <FlashCardOptions />
+      <ProgressBar />
+      <StarContainer />
+      <FlashCardContainer />
+      <FlashCardOptions />
+      <PreviousQuestionsModal />
     </div>
   )
 

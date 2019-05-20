@@ -1,19 +1,24 @@
 import React, { useContext } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Grid } from 'semantic-ui-react'
 import shopContext from '../context/shop-context'
 
 const FlashCardOptions = () => {
   const context = useContext(shopContext)
 
   return(
-    <div>
-      <Button onClick={context.toggleModalStatus} >Previous Questions</Button>
-      <Button onClick={() => {
-        context.handleAnswered(false)
-        context.handleQuestionIndex()
-        context.addPreviousQuestion(context.activeQuestion, context.correct)
-      }}>Next Question</Button>
-    </div>
+    <Grid id='flashcard-option-buttons'>
+      <Grid.Column textAlign="center">
+        <br/>
+        <Button id="button-1" inverted color="twitter" onClick={context.toggleModalStatus} >Previous Questions</Button>
+        <Button id="button-2" inverted color="vk" onClick={() => {
+          context.setShowAnswer(false)
+          context.setVisible(true)
+          context.handleAnswered(false)
+          context.handleQuestionIndex()
+          context.addPreviousQuestion(context.activeQuestion, context.correct)
+        }}>Next Question</Button>
+      </Grid.Column>
+    </Grid>
   )
 }
 

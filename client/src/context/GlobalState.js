@@ -8,6 +8,8 @@ const GlobalState = props => {
   const [questionIndex, setQuestionIndex] = useState(0)
   const [activeQuestion, setActiveQuestion] = useState({})
   const [answered, setAnswered] = useState(false)
+  const [showAnswer, setShowAnswer] = useState(false)
+  const [visible, setVisible] = useState(true)
   const [correct, setCorrect] = useState(false)
   const [modalStatus, setModalStatus] = useState(false)
   const [previousQuestions, setPreviousQuestions] = useState([])
@@ -118,6 +120,8 @@ const GlobalState = props => {
         questionIndex,
         activeQuestion,
         answered,
+        showAnswer,
+        visible,
         correct,
         loading,
         modalStatus,
@@ -130,6 +134,8 @@ const GlobalState = props => {
         fetchQuestions,
         handleQuestionIndex,
         handleAnswered,
+        setShowAnswer,
+        setVisible,
         saveScore,
         addPreviousQuestion,
         toggleModalStatus,

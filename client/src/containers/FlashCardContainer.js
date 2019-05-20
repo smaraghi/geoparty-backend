@@ -1,11 +1,16 @@
-import React, { useContext } from 'react'
-import { Card, Button } from 'semantic-ui-react'
+import React, { useState, useContext } from 'react'
+import { Card, Button, Transition } from 'semantic-ui-react'
 import shopContext from '../context/shop-context'
 import { isEmpty } from 'lodash'
 import '../css/FlashCard.css'
 
 const FlashCardContainer = () => {
   const context = useContext(shopContext)
+
+  const flipCard = () => {
+    context.setVisible(false)
+    setTimeout( () => (context.setShowAnswer(true)), 900)
+  }
 
   const answers = () => {
     if(isEmpty(context.activeQuestion)) {
@@ -20,6 +25,7 @@ const FlashCardContainer = () => {
   }
 
   const handleAction = (answer) => {
+    flipCard()
     context.handleAnswered(true)
     if (checkAnswer(answer)){
       context.handleCorrectAnswer(true)
@@ -35,8 +41,8 @@ const FlashCardContainer = () => {
   }
 
   return(
-    context.answered ?
-    <Card id="flash-card">
+    context.showAnswer ?
+    <Card id="flash-card" >
       <Card.Content>
         {formatHTML(context.activeQuestion.question)}
       </Card.Content>
@@ -45,7 +51,8 @@ const FlashCardContainer = () => {
       </Card.Content>
     </Card>
     :
-    <Card id="flash-card">
+    <Transition.Group animation={'horizontal flip'} duration={1000}>
+    {context.visible && <Card id="flash-card">
       <Card.Content>
         {formatHTML(context.activeQuestion.question)}
       </Card.Content>
@@ -55,7 +62,8 @@ const FlashCardContainer = () => {
         <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers()[2])}>C {formatHTML(answers()[2])}</Button>
         <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers()[3])}>D {formatHTML(answers()[3])}</Button>
       </Card.Content>
-    </Card>
+    </Card>}
+    </Transition.Group>
   )
 }
 
