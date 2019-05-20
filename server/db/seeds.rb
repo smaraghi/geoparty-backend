@@ -9,15 +9,12 @@ req = open("#{Rails.root}/db/factbook.json")
 body = req.read
 json = JSON.parse(body)
 
-names = []
-
 json['countries'].each do |k, v|
   data = v['data']
   geo = data['geography']
   people = data['people']
 
   name = data['name']
-  names << name 
   next if name == 'World'
   profile = data['introduction']['background']
 
@@ -33,19 +30,19 @@ json['countries'].each do |k, v|
   population = people['population']['total']
   population_rank = people['population']['global_rank']
   nationality = people['nationality']['noun']
-  languages = people['languages']['language'].map{|i| i['name']}.join('-')
-  religions = people['religions']['religion'].map{|i| i['name']}.join('-')
-  major_cities = people['major_urban_areas']['places'].map{|i| i['place']}.join('-')
+  languages = people['languages']['language'].map{|i| i['name']}.join(', ')
+  religions = people['religions']['religion'].map{|i| i['name']}.join(', ')
+  major_cities = people['major_urban_areas']['places'].map{|i| i['place']}.join(', ')
   capital = people['major_urban_areas']['places'].select{|i| i['is_capital']}[0]['place']
 
   begin
-    border_countries = geo['land_boundaries']['border_countries'].map{|i| i['country']}.join('-')
+    border_countries = geo['land_boundaries']['border_countries'].map{|i| i['country']}.join(', ')
   rescue
     border_countries = "None"
   end
 
   begin
-    natural_resources = geo['natural_resources']['resources'].join('-')
+    natural_resources = geo['natural_resources']['resources'].join(', ')
   rescue
     natural_resources = "None"
   end
@@ -73,5 +70,3 @@ json['countries'].each do |k, v|
     capital: capital
   )
 end
-
-puts names

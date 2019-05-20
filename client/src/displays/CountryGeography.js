@@ -7,8 +7,8 @@ const CountryGeography = props => {
 
   return (
     <div id='country-geography'>
-      <Header as='h2'>Geography</Header>
-      <Table striped selectable >
+      <Header as='h2' id="country-geography-header">Geography</Header>
+      <Table striped selectable color='blue' >
         <Table.Body>
           <Table.Row>
             <Table.Cell>Capital</Table.Cell>
@@ -52,11 +52,11 @@ const CountryGeography = props => {
           </Table.Row>
           <Table.Row>
             <Table.Cell>Lowest Point</Table.Cell>
-            <Table.Cell>{lowest_point}</Table.Cell>
+            <Table.Cell>{lowest_point}m</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Highest Point</Table.Cell>
-            <Table.Cell>{highest_point}</Table.Cell>
+            <Table.Cell>{highest_point}m</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Natural Resources</Table.Cell>
@@ -66,7 +66,7 @@ const CountryGeography = props => {
             <Table.Cell>Major Cities</Table.Cell>
             <Table.Cell>{major_cities}</Table.Cell>
           </Table.Row>
-        </Table.Body>    
+        </Table.Body>
       </Table>
     </div>
   )
