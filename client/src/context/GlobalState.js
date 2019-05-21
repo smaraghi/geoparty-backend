@@ -82,10 +82,6 @@ const GlobalState = props => {
     setQuestionIndex(questionIndex + 1)
   }
 
-  const handleAnswered = bool => {
-    setAnswered(bool)
-  }
-
   const toggleModalStatus = () => {
     setModalStatus(!modalStatus)
   }
@@ -93,10 +89,6 @@ const GlobalState = props => {
   const addPreviousQuestion = (question, correct) => {
     question.correct = correct
     setPreviousQuestions([...previousQuestions, question])
-  }
-
-  const handleCorrectAnswer = bool => {
-    setCorrect(bool)
   }
 
   const incrementProgress = () => {
@@ -133,13 +125,13 @@ const GlobalState = props => {
         logoutUser,
         fetchQuestions,
         handleQuestionIndex,
-        handleAnswered,
+        setAnswered,
+        setCorrect,
         setShowAnswer,
         setVisible,
         saveScore,
         addPreviousQuestion,
         toggleModalStatus,
-        handleCorrectAnswer,
         incrementProgress,
         incrementStarBar
       }}>

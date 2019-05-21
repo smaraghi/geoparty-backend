@@ -5,17 +5,26 @@ import shopContext from '../../context/shop-context'
 const Options = () => {
   const context = useContext(shopContext)
 
+  const handleQuestionSkip = () => {
+    if (!context.answered) {
+      context.setCorrect(false)
+      context.addPreviousQuestion(context.activeQuestion, false)
+    } else {
+      context.addPreviousQuestion(context.activeQuestion, context.correct)
+    }
+  }
+
   return(
     <Grid id='flashcard-option-buttons'>
       <Grid.Column textAlign="center">
         <br/>
         <Button id="button-1" inverted color="twitter" onClick={context.toggleModalStatus} >Previous Questions</Button>
         <Button id="button-2" inverted color="vk" onClick={() => {
+          handleQuestionSkip()
           context.setShowAnswer(false)
           context.setVisible(true)
-          context.handleAnswered(false)
+          context.setAnswered(false)
           context.handleQuestionIndex()
-          context.addPreviousQuestion(context.activeQuestion, context.correct)
         }}>Next Question</Button>
       </Grid.Column>
     </Grid>

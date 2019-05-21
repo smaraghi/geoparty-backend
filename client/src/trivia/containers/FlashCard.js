@@ -26,12 +26,13 @@ const FlashCard = () => {
 
   const handleAction = (answer) => {
     flipCard()
-    context.handleAnswered(true)
+    context.setAnswered(true)
     if (checkAnswer(answer)){
-      context.handleCorrectAnswer(true)
+      context.setCorrect(true)
       context.incrementProgress()
       context.saveScore(context.user, true)
     } else {
+      context.setCorrect(false)
       context.saveScore(context.user, false)
     }
   }
