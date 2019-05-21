@@ -1,10 +1,37 @@
-import React from 'react'
-import LoginForm from './LoginForm';
-import CreateUser from '../components/CreateUser';
+import React, { useContext, useState } from 'react'
+import shopContext from '../../context/shop-context'
+import { Link } from 'react-router-dom'
+import { Segment, Form, Button } from 'semantic-ui-react'
 
 const Login = () => {
+  const context = useContext(shopContext)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
   return(
-    <div></div>
+    <Segment>
+      <Form onSubmit={() => context.authenticatingUser(username, password)} size="mini" key="mini">
+        <Form.Group widths="equal">
+          <Form.Input
+            label="username"
+            placeholder="username"
+            name="username"
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+          />
+          <Form.Input
+            type="password"
+            label="password"
+            placeholder="password"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </Form.Group>
+        <Button type="submit" inverted color="vk">Login</Button>
+        <Link to="/create_account"><Button floated="right" inverted color="linkedin">Create New Account</Button></Link>
+      </Form>
+    </Segment>
   )
 }
 
