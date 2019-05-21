@@ -9,9 +9,9 @@ const Bio = () => {
   return (
     <Card id='profile-bio'>
       {isEmpty(context.user) ?
-      <Image src={require("../../images/star.png")} alt="party"/>
+      <Image src={require("../../images/star.png")} alt="avatar"/>
       :
-      <Image src={require(`../../images/${context.user.avatar}`)} alt="party"/>
+      <Image src={require(`../../images/${context.user.avatar}`)} alt="avatar"/>
       }
       <Card.Content>
         <Card.Header>{context.user.username}</Card.Header>

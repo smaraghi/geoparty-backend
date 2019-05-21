@@ -3,7 +3,7 @@ require 'json'
 Country.destroy_all
 User.destroy_all
 
-User.create(username: 'Phil', password: '111', total_questions: 37, correct_answers: 32)
+User.create(username: 'Phil', password: '111', bio:'a', total_questions: 37, correct_answers: 32)
 
 req = open("#{Rails.root}/db/factbook.json")
 body = req.read

@@ -1,6 +1,6 @@
 
 class UserSerializer < ActiveModel::Serializer
 
-  attributes :id, :username, :total_questions, :correct_answers
+  attributes :id, :username, :bio, :avatar, :total_questions, :correct_answers
 
 end

@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_05_15_134519) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.text "bio"
+    t.string "avatar"
     t.integer "total_questions"
     t.integer "correct_answers"
     t.datetime "created_at", null: false

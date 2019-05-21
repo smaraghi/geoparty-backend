@@ -2,6 +2,8 @@
 class UsersController < ApplicationController
 
   def create
+    @user = User.create(username: params[:username], password: params[:password], bio: params[:bio], avatar: 'world.jpg')
+    render json: @user
   end
 
   def update
