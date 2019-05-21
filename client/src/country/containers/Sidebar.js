@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { List } from 'semantic-ui-react'
 import SidebarItem from '../components/SidebarItem'
 import countryData from '../../data/countryData'
+import Filter from '../components/Filter';
 
 const Sidebar = props => {
+  const [text, setText] = useState('')
+
+  const filteredCountries = () => {
+    return countryData().filter(c => c.name.toLowerCase().includes(text.toLowerCase()))
+  }
+
+
   return(
     <div>
-    <h2>Select Country party</h2>
+    <Filter setText={setText}/>
     <List divided animated>
-      {countryData().map((country, i) => <SidebarItem key={i} country={country} setActiveCountry={props.setActiveCountry}/>)}
+      {filteredCountries().map((country, i) => <SidebarItem key={i} country={country} setActiveCountry={props.setActiveCountry}/>)}
     </List>
     </div>
   )

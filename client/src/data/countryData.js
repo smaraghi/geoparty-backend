@@ -1,22 +1,22 @@
 export default () => {
   return[
     {
-      text: 'Afghanistan',
+      name: 'Afghanistan',
       flag: 'af',
       value: 'af'
     },
     {
-      text: 'Albania', 
+      name: 'Albania', 
       flag: 'al',
       value: 'al'
     },
     {
-      text: 'Algeria', 
+      name: 'Algeria', 
       flag: 'dz',
       value: 'dz'
     },
     {
-      text: 'American Samoa', 
+      name: 'American Samoa', 
       flag: 'as',
       value: 'as'
     }
