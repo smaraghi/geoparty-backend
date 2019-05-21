@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Country from '../country/containers/Country'
 import Trivia from '../trivia/containers/Trivia'
 import Profile from '../profile/containers/Profile';
-import Login from '../login/Login'
+import Login from '../login/containers/Login'
 
 const MainContainer = () => {
   return(
