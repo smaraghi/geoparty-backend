@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
 import shopContext from '../../context/shop-context'
-import { Header, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
 const Bio = () => {
   const context = useContext(shopContext)
 
   return (
-    <div>
-      <Header as='h1'>{context.user.username}</Header>
-      <Image src="party" alt="party"/>
-      <p>
-        eat, sleep, party, repeat
-      </p>
-    </div>
+    <Card id='profile-bio'>
+      <Image src={require("../../images/star.png")} alt="party"/>
+      <Card.Content>
+        <Card.Header>{context.user.username}</Card.Header>
+        <Card.Description>eat, sleep, party, repeat</Card.Description>  
+      </Card.Content>
+    </Card>
   )
 }
 
