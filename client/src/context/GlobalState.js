@@ -15,6 +15,7 @@ const GlobalState = props => {
   const [previousQuestions, setPreviousQuestions] = useState([])
   const [percentage, setPercentage] = useState(0)
   const [starAmount, setStarAmount] = useState(0)
+  const [avatar, setAvatar] = useState('world.jpg')
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -42,6 +43,7 @@ const GlobalState = props => {
         setUser(data.user)
         setStarAmount(Math.floor(data.user.correct_answers / 10))
         setPercentage((data.user.correct_answers % 10) * 10)
+        setAvatar(data.user.avatar)
         localStorage.setItem('token', data.token)
       } else {
         alert('Incorrect username or password')
@@ -58,6 +60,7 @@ const GlobalState = props => {
       setUser(user)
       setStarAmount(Math.floor(user.correct_answers / 10))
       setPercentage((user.correct_answers % 10) * 10)
+      setAvatar(user.avatar)
     })
   }
 
@@ -115,6 +118,7 @@ const GlobalState = props => {
   return(
     <ShopContext.Provider
       value={{
+        avatar,
         user,
         questions,
         questionIndex,
@@ -134,6 +138,7 @@ const GlobalState = props => {
         fetchQuestions,
         handleQuestionIndex,
         setAnswered,
+        setAvatar,
         setCorrect,
         setShowAnswer,
         setVisible,
