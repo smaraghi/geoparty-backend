@@ -33,7 +33,7 @@ const Options = () => {
         }}
       >
         <Form.TextArea
-          label='bio'
+          label='bio (must be less than 200 characters)'
           name='bio'
           placeholder={context.user.bio}
           onChange={(e) => setBio(e.target.value)}

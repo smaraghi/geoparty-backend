@@ -23,7 +23,7 @@ const CreateUser = () => {
       if (user.id) {
         setRedirect(true)
       } else {
-        window.alert('invalid username or password')
+        window.alert('Error submitting the form')
       }
     })
   }
@@ -57,7 +57,7 @@ const CreateUser = () => {
           value={password}
         />
         <Form.TextArea
-          label='bio'
+          label='bio (must be less than 200 characters)'
           name='bio'
           placeholder='Tell us more about yourself...'
           onChange={(e) => setBio(e.target.value)}
