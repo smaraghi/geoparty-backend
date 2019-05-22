@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2019_05_15_134519) do
     t.string "password_digest"
     t.text "bio"
     t.string "avatar"
-    t.integer "total_questions"
-    t.integer "correct_answers"
+    t.integer "total_questions", default: 0
+    t.integer "correct_answers", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

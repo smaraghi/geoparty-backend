@@ -6,8 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :bio
       t.string :avatar
 
-      t.integer :total_questions
-      t.integer :correct_answers
+      t.integer :total_questions, default: 0
+      t.integer :correct_answers, default: 0
 
       t.timestamps
     end
