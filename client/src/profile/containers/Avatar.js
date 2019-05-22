@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header, Button } from 'semantic-ui-react'
+import { Segment, Header } from 'semantic-ui-react'
 
 const Options = () => {
   return(

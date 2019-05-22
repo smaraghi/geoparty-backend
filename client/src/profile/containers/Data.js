@@ -1,17 +1,26 @@
-
 import React from 'react'
 import AvatarImage from '../components/AvatarImage'
-import Bio from './Bio'
+import Bio from '../components/Bio'
 import Stats from './Stats';
-import { Segment, Item } from 'semantic-ui-react'
+import { Segment, Grid } from 'semantic-ui-react'
 
 const Data = () => {
 
   return (
     <Segment id="profile-data">
-        <AvatarImage />
-        <Bio />
-        <Stats />
+      <Grid>
+        <Grid.Column width={3}>
+          <AvatarImage />
+        </Grid.Column>
+        
+        <Grid.Column width={7}>
+          <Bio />
+        </Grid.Column>
+        
+        <Grid.Column width={6}>
+          <Stats />
+        </Grid.Column>
+      </Grid>
     </Segment>
   )
 }

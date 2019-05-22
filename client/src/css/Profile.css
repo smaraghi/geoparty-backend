@@ -1,31 +1,6 @@
 #profile-data{
-  width: 80%;
-  margin: auto;
-}
-
-#profile-image{
-  display: inline-block;
-  max-width: 128px;
-  max-height: 128px;
-  border-style: solid;
-  border-width: 1px;
-  width: 15%;
-}
-
-#profile-bio{
-  display: inline-block;
   width: 50%;
   margin: auto;
-  margin-top: 20px;
-  width: 35%;
-}
-
-#profile-stats{
-  display: inline-block;
-  width: 35%;
-  margin: auto;
-  margin-top: 20px;
-
 }
 
 #avatar-options{

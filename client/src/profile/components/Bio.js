@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import shopContext from '../../context/shop-context'
-import { Card, Image, Header } from 'semantic-ui-react'
-import StarBar from '../../trivia/containers/StarBar'
-import { isEmpty } from 'lodash'
+import { Card, Header } from 'semantic-ui-react'
 
 const Bio = () => {
   const context = useContext(shopContext)
