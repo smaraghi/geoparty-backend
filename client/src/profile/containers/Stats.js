@@ -7,19 +7,19 @@ const Stats = () => {
   const context = useContext(shopContext)
 
   const percentageCorrect = () => {
-    return context.user.correct_answers ? 
+    return context.user.correct_answers ?
     (context.user.correct_answers / context.user.total_questions).toFixed(2) * 100
     :
     0
   }
 
   return(
-    <Segment id='profile-stats'>
+    <div id='profile-stats'>
       <StarBar />
       <Header as='h2'>Rank: {context.starAmount}</Header>
       <Header as='h3'>Total Questions: {context.user.total_questions}</Header>
       <Header as='h3'>Percentage Correct: {percentageCorrect()}%</Header>
-    </Segment>
+    </div>
   )
 }
 

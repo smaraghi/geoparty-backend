@@ -1,23 +1,17 @@
 import React, { useContext } from 'react'
 import shopContext from '../../context/shop-context'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Header } from 'semantic-ui-react'
+import StarBar from '../../trivia/containers/StarBar'
 import { isEmpty } from 'lodash'
 
 const Bio = () => {
   const context = useContext(shopContext)
 
   return (
-    <Card id='profile-bio'>
-      {isEmpty(context.user) ?
-      <Image src={require("../../images/star.png")} alt="avatar"/>
-      :
-      <Image src={require(`../../images/${context.user.avatar}`)} alt="avatar"/>
-      }
-      <Card.Content>
-        <Card.Header>{context.user.username}</Card.Header>
-        <Card.Description>{context.user.bio}</Card.Description>
-      </Card.Content>
-    </Card>
+    <div id='profile-bio'>
+      <Header as='h2'>{context.user.username}</Header>
+      <Card.Description>{context.user.bio}</Card.Description>
+    </div>
   )
 }
 

@@ -1,15 +1,16 @@
 import React from 'react'
-import Bio from './Bio'
-import Stats from './Stats';
-import Options from './Options';
+import Data from './Data'
+import Avatar from './Avatar'
+import Options from '../components/Options';
 import '../../css/Profile.css'
+import { Button } from 'semantic-ui-react'
 
 const Profile = () => {
 
   return(
     <div>
-      <Bio />
-      <Stats />
+      <Data />
+      <Avatar />
       <Options />
     </div>
   )
