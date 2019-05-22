@@ -11,9 +11,8 @@ const Sidebar = props => {
     return countryData().filter(c => c.name.toLowerCase().includes(text.toLowerCase()))
   }
 
-
   return(
-    <div>
+    <div id='country-sidebar'>
     <Filter setText={setText}/>
     <List divided animated>
       {filteredCountries().map((country, i) => <SidebarItem key={i} country={country} setActiveCountry={props.setActiveCountry}/>)}

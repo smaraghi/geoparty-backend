@@ -10,7 +10,7 @@ const Country = () => {
 
   return(
     <Grid>
-      <Grid.Column width={3}  id='party'>
+      <Grid.Column width={3} >
         <Sidebar setActiveCountry={setActiveCountry}/>
       </Grid.Column>
       <Grid.Column width={13}>
