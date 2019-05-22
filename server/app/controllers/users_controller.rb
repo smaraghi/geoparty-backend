@@ -8,11 +8,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.total_questions += 1
-    if params[:correct]
-      @user.correct_answers += 1
-    end
-    @user.save
+    @user.update(user_params)
+    
   end
 
   def token
@@ -22,6 +19,12 @@ class UsersController < ApplicationController
     if @user
       render json: @user
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :bio, :avatar, :total_questions, :correct_answers)
   end
 
 end

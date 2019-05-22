@@ -69,11 +69,17 @@ const GlobalState = props => {
   }
 
   const saveScore = (user, bool) => {
+    let correct_answers
+    bool ? 
+    correct_answers = user.correct_answers + 1 
+    :
+    correct_answers = user.correct_answers 
     fetch(`http://localhost:3000/users/${user.id}`, {
       method: 'PATCH',
       headers: {"Content-Type":"application/json", Accept:"application/json"},
       body: JSON.stringify({
-        correct: bool
+        total_questions: user.total_questions + 1,
+        correct_answers: correct_answers
       })
     })
   }
