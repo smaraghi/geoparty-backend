@@ -63,6 +63,8 @@ const GlobalState = props => {
 
   const logoutUser = () => {
     setUser({})
+    setPercentage(0)
+    setStarAmount(0)
     localStorage.removeItem('token')
   }
 
@@ -93,7 +95,7 @@ const GlobalState = props => {
 
   const incrementProgress = () => {
     let newProgress = percentage + 10
-    if(newProgress === 100){
+    if(newProgress >= 100){
       newProgress = 0
       incrementStarBar()
     }

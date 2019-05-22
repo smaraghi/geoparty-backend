@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import shopContext from '../../context/shop-context'
 import '../../css/ProgressBar.css'
-import Filler from './Filler';
+import Filler from './Filler'
+import { isEmpty } from 'lodash'
 
 const ProgressBar = () => {
   const context = useContext(shopContext)
