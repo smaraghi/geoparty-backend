@@ -1,7 +1,7 @@
 import React from 'react'
 import Data from './Data'
 import Avatar from './Avatar'
-import Options from '../components/Options';
+import Options from './Options';
 import '../../css/Profile.css'
 import { Button } from 'semantic-ui-react'
 
