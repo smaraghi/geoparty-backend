@@ -1,11 +1,13 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Grid, Image, Card } from 'semantic-ui-react'
 
 const RobotImage = (props) => {
   return(
-    <Card id="robot-image">
-      <Image src={require(`../../images/Robot-${props.num}.png`)} alt="robot"/>
-    </Card>
+    <Grid.Column width={4} divided>
+     <Card id='robot-image-card' onClick={null}>
+      <Image id='robot-image' src={require(`../../images/Robot-${props.num}.png`)} alt="robot"/>
+      </Card> 
+    </Grid.Column>
   )
 }
 

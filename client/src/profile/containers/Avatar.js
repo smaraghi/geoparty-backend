@@ -1,16 +1,16 @@
 import React from 'react'
 import RobotImage from '../components/RobotImage';
-import { Segment, Header, Card } from 'semantic-ui-react'
+import { Segment, Header, Grid } from 'semantic-ui-react'
 
-const Options = () => {
+const Avatar = () => {
   return(
     <Segment id="avatar-options">
       <Header>Edit Avatar</Header>
-      <Card.Group>
-        {Array.from(Array(6), (_, i) => <span key={i}><RobotImage num={i + 1}/></span>)}
-      </Card.Group>
+      <Grid>
+        {Array.from(Array(6), (_, i) => <RobotImage key={i} num={i + 1}/>)}
+      </Grid>
     </Segment>
   )
 }
 
-export default Options
+export default Avatar
