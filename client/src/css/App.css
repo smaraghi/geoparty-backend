@@ -17,3 +17,11 @@
 #trivia-nav{
   font-family: 'Source Serif Pro', serif;
 }
+
+.ui.modal>.header {
+  font-family: 'Source Serif Pro', serif;
+}
+
+.ui.items>.item>.content {
+  font-family: 'Source Serif Pro', serif;
+}
