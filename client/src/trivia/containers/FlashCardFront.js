@@ -41,17 +41,17 @@ const FlashCardFront = () => {
     <Transition.Group animation={'horizontal flip'} duration={1000}>
       { context.visible &&  
       <Card id="flash-card">
-        <Card.Content className='flashcard-question'>
-          {context.activeQuestion.question}
+        <Card.Content className='flashcard-question-container'>
+          <Card.Description id='flashcard-question'>{context.activeQuestion.question}</Card.Description>
         </Card.Content>
         <Card.Content id='card-button-container'>
           <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers()[0])}>A {answers()[0]}</Button>
 
-          <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers()[1])}>B {answers()[1]}</Button>
+          <Button id='card-button-two' inverted color='pink' onClick={() => handleAction(answers()[1])}>B {answers()[1]}</Button>
 
           <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers()[2])}>C {answers()[2]}</Button>
 
-          <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers()[3])}>D {answers()[3]}</Button>
+          <Button id='card-button-four' inverted color='violet' onClick={() => handleAction(answers()[3])}>D {answers()[3]}</Button>
         </Card.Content>
       </Card>
       }

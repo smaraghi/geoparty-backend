@@ -18,8 +18,8 @@ const Options = () => {
     <Grid id='flashcard-option-buttons'>
       <Grid.Column textAlign="center">
         <br/>
-        <Button id="button-1" inverted color="twitter" onClick={context.toggleModalStatus} >Previous Questions</Button>
-        <Button id="button-2" inverted color="vk" onClick={() => {
+        <Button id="previous-button" inverted color="twitter" onClick={context.toggleModalStatus} >Previous Questions</Button>
+        <Button id="next-button" inverted color="vk" onClick={() => {
           handleQuestionSkip()
           context.setShowAnswer(false)
           context.setVisible(true)

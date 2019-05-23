@@ -20,7 +20,7 @@
 }
 
 #card-button-container{
-  width: 80%;
+  width: 70%;
   margin: auto;
 }
 
@@ -29,6 +29,8 @@
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
 }
 
 #card-button-two{
@@ -36,6 +38,8 @@
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
 }
 
 #card-button-three{
@@ -43,6 +47,8 @@
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
 }
 
 #card-button-four{
@@ -50,11 +56,26 @@
   width: 100%;
   height: 50px;
   margin-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
 }
 
-.flashcard-question{
+#previous-button{
+  font-size: 18px;
+}
+
+#next-button{
+  font-size: 18px;
+}
+
+.flashcard-question-container{
   max-height: 80px;
   height: 80px;
+}
+
+#flashcard-question{
+  font-size: 22px;
+  text-align: center;
 }
 
 
