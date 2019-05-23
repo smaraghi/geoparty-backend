@@ -1,27 +1,13 @@
-
 import React from 'react'
-import { Header, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
-const Geography = props => {
-   const {location, continent, area, area_rank, comparison, border_countries, climate, terrain, lowest_point, highest_point, natural_resources, major_cities, capital, population} = props.countryData
+const GeographyTable = props => {
+   const { location, area, area_rank, comparison, border_countries, climate, terrain, lowest_point, highest_point, natural_resources } = props.countryData
 
   return (
     <div id='country-geography'>
-      <Header as='h2' id="country-geography-header">Geography</Header>
       <Table striped selectable color='blue' >
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>Capital</Table.Cell>
-            <Table.Cell>{capital}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Population</Table.Cell>
-            <Table.Cell>{population}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Continent</Table.Cell>
-            <Table.Cell>{continent}</Table.Cell>
-          </Table.Row>
           <Table.Row>
             <Table.Cell>Area</Table.Cell>
             <Table.Cell>{area} sq km</Table.Cell>
@@ -62,14 +48,10 @@ const Geography = props => {
             <Table.Cell>Natural Resources</Table.Cell>
             <Table.Cell>{natural_resources}</Table.Cell>
           </Table.Row>
-          <Table.Row>
-            <Table.Cell>Major Cities</Table.Cell>
-            <Table.Cell>{major_cities}</Table.Cell>
-          </Table.Row>
         </Table.Body>
       </Table>
     </div>
   )
 }
 
-export default Geography
+export default GeographyTable

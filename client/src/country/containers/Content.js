@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Title from '../components/Title'
 import Summary from '../components/Summary'
-import Geography from '../components/Geography'
+import GeographyTable from '../components/GeographyTable'
+import OverviewTable from '../components/OverviewTable'
+import { Header } from 'semantic-ui-react'
 
 const Content = (props) => {
   const [countryData, setCountryData] = useState({})
@@ -24,7 +26,10 @@ const Content = (props) => {
     <div>
       <Title countryName={countryData.name} />
       <Summary countryData={countryData} />
-      <Geography countryData={countryData} />
+      <Header as='h2' className="country-table-header">Overview</Header>
+      <OverviewTable countryData={countryData} />
+      <Header as='h2' className="country-table-header">Geography</Header>
+      <GeographyTable countryData={countryData} />
     </div>
   )
 }

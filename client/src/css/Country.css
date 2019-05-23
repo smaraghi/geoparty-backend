@@ -8,10 +8,20 @@
   margin: auto;
 }
 
+#country-overview{
+  margin-top: 20px;
+  width: 92%;
+  margin: auto;
+}
+
 #country-geography{
   margin-top: 20px;
   width: 92%;
   margin: auto;
+}
+
+.country-table-header{
+  text-align: center;
 }
 
 #country-sidebar{
