@@ -41,7 +41,7 @@ const FlashCardFront = () => {
     <Transition.Group animation={'horizontal flip'} duration={1000}>
       { context.visible &&  
       <Card id="flash-card">
-        <Card.Content>
+        <Card.Content className='flashcard-question'>
           {context.activeQuestion.question}
         </Card.Content>
         <Card.Content id='card-button-container'>

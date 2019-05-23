@@ -52,4 +52,9 @@
   margin-bottom: 10px;
 }
 
+.flashcard-question{
+  max-height: 80px;
+  height: 80px;
+}
+
 

@@ -7,7 +7,7 @@ const FlashCardBack = () => {
 
   return(
     <Card id="flash-card" >
-      <Card.Content>
+      <Card.Content className='flashcard-question'>
         {context.activeQuestion.question}
       </Card.Content>
       <Card.Content id='correct-answer-container'>
