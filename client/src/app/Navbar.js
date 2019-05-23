@@ -29,9 +29,11 @@ const Navbar = () => {
         <Menu.Item name='Profile' />
       </Link>
 
-      <Link to='/login' onClick={context.logoutUser}>
-        <Menu.Item name='Logout' />
-      </Link>
+      <Menu.Menu position='right'>
+        <Link to='/login' onClick={context.logoutUser}>
+          <Menu.Item name='Logout' />
+        </Link>
+      </Menu.Menu>
     </Menu>
     :
     <Menu>
@@ -50,9 +52,11 @@ const Navbar = () => {
         <Menu.Item name='Trivia' />
       </Link>
 
-      <Link to='/login'>
-        <Menu.Item name='Login' />
-      </Link>
+      <Menu.Menu position='right'>
+        <Link to='/login'>
+          <Menu.Item name='Login' />
+        </Link>
+      </Menu.Menu>
     </Menu>
   )
 }
