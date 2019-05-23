@@ -3,7 +3,6 @@ import Data from './Data'
 import Avatar from './Avatar'
 import Options from './Options';
 import '../../css/Profile.css'
-import { Button } from 'semantic-ui-react'
 
 const Profile = () => {
 

@@ -5,8 +5,8 @@ const GeographyTable = props => {
    const { location, area, area_rank, comparison, border_countries, climate, terrain, lowest_point, highest_point, natural_resources } = props.countryData
 
   return (
-    <div id='country-geography'>
-      <Table striped selectable color='blue' >
+    <div id='country-geography' attached='bottom'>
+      <Table striped selectable >
         <Table.Body>
           <Table.Row>
             <Table.Cell>Area</Table.Cell>

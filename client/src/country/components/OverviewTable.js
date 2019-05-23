@@ -6,7 +6,7 @@ const OverviewTable = props => {
 
   return(
     <div id='country-overview'>
-      <Table striped selectable color='blue' >
+      <Table striped selectable >
         <Table.Body>
           <Table.Row>
             <Table.Cell>Capital</Table.Cell>

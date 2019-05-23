@@ -17,6 +17,7 @@ const GlobalState = props => {
   const [starAmount, setStarAmount] = useState(0)
   const [avatar, setAvatar] = useState('world.jpg')
   const [bio, setBio] = useState('')
+  const [activeItem, setActiveItem] = useState('overview')
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -122,6 +123,7 @@ const GlobalState = props => {
     <ShopContext.Provider
       value={{
         avatar,
+        activeItem,
         bio,
         user,
         questions,
@@ -142,6 +144,7 @@ const GlobalState = props => {
         fetchQuestions,
         handleQuestionIndex,
         setAnswered,
+        setActiveItem,
         setAvatar,
         setBio,
         setCorrect,
