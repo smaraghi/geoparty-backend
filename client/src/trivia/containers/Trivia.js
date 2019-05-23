@@ -5,6 +5,7 @@ import PreviousQuestions from './PreviousQuestions'
 import shopContext from '../../context/shop-context';
 import ProgressBar from '../components/ProgressBar';
 import StarBar from './StarBar';
+import '../../css/Trivia.css'
 
 const Trivia = () => {
   const context = useContext(shopContext)
