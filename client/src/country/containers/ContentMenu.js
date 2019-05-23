@@ -10,7 +10,8 @@ const ContentMenu = () => {
       <Menu id='content-menu' tabular attached='top'>
         <Menu.Item name='overview' active={context.activeItem === 'overview'} onClick={() => context.setActiveItem('overview')}/>
         <Menu.Item name='geography' active={context.activeItem === 'geography'} onClick={() => context.setActiveItem('geography')}/>
-      </Menu>  
+        <Menu.Item name='people' active={context.activeItem === 'people'} onClick={() => context.setActiveItem('people')}/>
+      </Menu>
     </div>
   )
 }
