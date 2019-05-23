@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Card, Button, Transition } from 'semantic-ui-react'
 import shopContext from '../../context/shop-context'
 import { isEmpty } from 'lodash'
-import '../../css/FlashCard.css'
 
 const FlashCard = () => {
   const context = useContext(shopContext)
@@ -54,15 +53,21 @@ const FlashCard = () => {
     :
     <Transition.Group animation={'horizontal flip'} duration={1000}>
     {context.visible && <Card id="flash-card">
+     
       <Card.Content>
         {formatHTML(context.activeQuestion.question)}
       </Card.Content>
       <Card.Content id='card-button-container'>
+
         <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers()[0])}>A {formatHTML(answers()[0])}</Button>
+
         <Button id='card-button-two' inverted color='red' onClick={() => handleAction(answers()[1])}>B {formatHTML(answers()[1])}</Button>
+
         <Button id='card-button-three' inverted color='green' onClick={() => handleAction(answers()[2])}>C {formatHTML(answers()[2])}</Button>
+
         <Button id='card-button-four' inverted color='teal' onClick={() => handleAction(answers()[3])}>D {formatHTML(answers()[3])}</Button>
       </Card.Content>
+    
     </Card>}
     </Transition.Group>
   )

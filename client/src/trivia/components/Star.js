@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../css/Star.css'
 
 const Star = () => {
   return(

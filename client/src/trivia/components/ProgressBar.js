@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import shopContext from '../../context/shop-context'
-import '../../css/ProgressBar.css'
 import { Progress } from 'semantic-ui-react'
-
 
 const ProgressBar = () => {
   const context = useContext(shopContext)
