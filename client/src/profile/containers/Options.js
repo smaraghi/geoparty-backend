@@ -18,6 +18,12 @@ const Options = () => {
     })
   }
 
+  const handleBioChange = (e) => {
+    if (e.target.value.length <= 150) {
+      setBio(e.target.value)
+    }
+  }
+
   return (
     <Segment id="profile-options">
       <Header>Edit Profile</Header>
@@ -33,10 +39,10 @@ const Options = () => {
         }}
       >
         <Form.TextArea
-          label='bio (must be less than 200 characters)'
+          label='bio'
           name='bio'
           placeholder={context.user.bio}
-          onChange={(e) => setBio(e.target.value)}
+          onChange={handleBioChange}
           value={bio}
         />
       <Button type='submit'>Submit</Button>

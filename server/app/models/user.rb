@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true, if: :password_validation
-  validates_length_of :bio, maximum: 200, allow_blank: true
+  validates_length_of :bio, maximum: 150, allow_blank: true
 
   def password_validation
     new_record? || password_digest_changed?

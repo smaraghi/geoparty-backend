@@ -37,6 +37,12 @@ const CreateUser = () => {
     }
   }
 
+  const handleBioChange = (e) => {
+    if (e.target.value.length <= 150) {
+      setBio(e.target.value)
+    }
+  }
+
   return (
     <Segment>
       {renderRedirect()}
@@ -60,10 +66,10 @@ const CreateUser = () => {
           value={password}
         />
         <Form.TextArea
-          label='bio (must be less than 200 characters)'
+          label='bio'
           name='bio'
           placeholder='Tell us more about yourself...'
-          onChange={(e) => setBio(e.target.value)}
+          onChange={handleBioChange}
           value={bio}
         />
         <Button type='submit'>Submit</Button>
