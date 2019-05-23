@@ -73,9 +73,14 @@
   height: 80px;
 }
 
-#flashcard-question{
+.flashcard-question{
   font-size: 22px;
   text-align: center;
 }
 
+#correct-answer{
+  text-align: center;
+  font-size: 36px;
+  padding-top: 80px;
+}
 

@@ -42,7 +42,7 @@ const FlashCardFront = () => {
       { context.visible &&  
       <Card id="flash-card">
         <Card.Content className='flashcard-question-container'>
-          <Card.Description id='flashcard-question'>{context.activeQuestion.question}</Card.Description>
+          <Card.Description className='flashcard-question'>{context.activeQuestion.question}</Card.Description>
         </Card.Content>
         <Card.Content id='card-button-container'>
           <Button id='card-button-one' inverted color='blue' onClick={() => handleAction(answers()[0])}>A {answers()[0]}</Button>
