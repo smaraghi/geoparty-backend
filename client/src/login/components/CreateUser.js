@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import shopContext from '../../context/shop-context'
 import { Redirect } from 'react-router-dom'
 import { Form, Segment, Header, Button } from 'semantic-ui-react'
 
@@ -7,6 +8,7 @@ const CreateUser = () => {
   const [password, setPassword] = useState('')
   const [bio, setBio] = useState('')
   const [redirect, setRedirect] = useState(false)
+  const context = useContext(shopContext)
 
   const handleSubmit = () => {
     fetch('http://localhost:3000/users', {
@@ -30,7 +32,8 @@ const CreateUser = () => {
 
   const renderRedirect = () => {
     if (redirect) {
-      return <Redirect to='/login' />
+      context.authenticatingUser(username, password)
+      return <Redirect to='/profile' />
     }
   }
 
