@@ -30,6 +30,7 @@
 
 #country-sidebar-item{
   margin-left: 15px;
+  cursor: pointer; 
 }
 
 #country-filter{
