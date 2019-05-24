@@ -12,9 +12,9 @@ class QuestionsController < ApplicationController
     body = req.read
 
     body.gsub!('&#039;', "'")
-    body.gsub!('&quot\;', '"')
-    body.gsub!('&iacute\;', 'í')
-    body.gsub!('&oacute\;', 'ó')
+    # body.gsub!('&quot\;', '"')
+    body.gsub!('&iacute;', 'í')
+    body.gsub!('&oacute;', 'ó')
 
     json = JSON.parse(body)
     json['results'] = json['results'].shuffle
