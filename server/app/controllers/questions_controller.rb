@@ -10,10 +10,16 @@ class QuestionsController < ApplicationController
     type = 'multiple'
     req = open("https://opentdb.com/api.php?amount=#{amount}&category=#{category}&difficulty=#{difficulty}&type=#{type}")
     body = req.read
+
+    body.gsub!('&#039;', "'")
+    body.gsub!('&quot\;', '"')
+    body.gsub!('&iacute\;', 'í')
+    body.gsub!('&oacute\;', 'ó')
+
     json = JSON.parse(body)
+    json['results'] = json['results'].shuffle
 
     format_choices(json)
-    byebug
 
     render json: json
   end
