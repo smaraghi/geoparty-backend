@@ -15,6 +15,7 @@ class QuestionsController < ApplicationController
     # body.gsub!('&quot\;', '"')
     body.gsub!('&iacute;', 'í')
     body.gsub!('&oacute;', 'ó')
+    #&atilde:
 
     json = JSON.parse(body)
     json['results'] = json['results'].shuffle
