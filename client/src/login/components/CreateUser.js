@@ -46,7 +46,7 @@ const CreateUser = () => {
   return (
     <Segment>
       {renderRedirect()}
-      <Header as='h2'>Create Account party</Header>
+      <Header as='h2'>Create Account</Header>
       <Form onSubmit={(e) => {
         e.preventDefault()
         handleSubmit()

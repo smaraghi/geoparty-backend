@@ -17,7 +17,6 @@ const FlashCardFront = () => {
   const flipCard = () => {
     context.setVisible(false)
     setTimeout( () => (context.setShowAnswer(true)), 900)
-    console.log('hi orifins')
   }
 
   const checkAnswer = (answer) => {
@@ -30,16 +29,20 @@ const FlashCardFront = () => {
     if (checkAnswer(answer)){
       context.setCorrect(true)
       context.incrementProgress()
-      context.saveScore(context.user, true)
+      if (!isEmpty(context.user)) {
+        context.saveScore(context.user, true)
+      }
     } else {
       context.setCorrect(false)
+      if (!isEmpty(context.user)) {
       context.saveScore(context.user, false)
+      }
     }
   }
 
   return(
     <Transition.Group animation={'horizontal flip'} duration={1000}>
-      { context.visible &&  
+      { context.visible &&
       <Card id="flash-card">
         <Card.Content className='flashcard-question-container'>
           <Card.Description className='flashcard-question'>{context.activeQuestion.question}</Card.Description>
@@ -59,4 +62,4 @@ const FlashCardFront = () => {
   )
 }
 
-export default FlashCardFront 
+export default FlashCardFront
