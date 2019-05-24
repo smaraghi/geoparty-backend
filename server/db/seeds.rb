@@ -1,4 +1,13 @@
+
 require 'json'
+
+def format_caps_lock(text)
+  text.split.map{|i| i.length > 2 && i == i.upcase ? i.titleize : i}.join(' ')
+end
+
+def format_number_commas(num)
+  num.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+end
 
 Country.destroy_all
 User.destroy_all
@@ -17,18 +26,23 @@ json['countries'].each do |k, v|
 
   name = data['name']
   next if name == 'World'
-  profile = data['introduction']['background']
+  profile = format_caps_lock(data['introduction']['background'])
 
   location = geo['location']
   continent = geo['map_references']
-  area = geo['area']['total']['value']
+  area = format_number_commas(geo['area']['total']['value'])
   area_rank = geo['area']['global_rank']
   comparison = geo['area']['comparative']
   climate = geo['climate']
   terrain = geo['terrain']
-  lowest_point = [geo['elevation']['lowest_point']['name'], geo['elevation']['lowest_point']['elevation']['value']].join(' - ')
-  highest_point = [geo['elevation']['highest_point']['name'], geo['elevation']['highest_point']['elevation']['value']].join(' - ')
-  population = people['population']['total']
+  lowest_point = [
+                geo['elevation']['lowest_point']['name'], format_number_commas(geo['elevation']['lowest_point']['elevation']['value'])
+                ].join(' - ')
+  highest_point = [
+                geo['elevation']['highest_point']['name'],
+                format_number_commas(geo['elevation']['highest_point']['elevation']['value'])
+                ].join(' - ')
+  population = format_number_commas(people['population']['total'])
   population_rank = people['population']['global_rank']
   nationality = people['nationality']['noun']
   languages = people['languages']['language'].map{|i| i['name']}.join(', ')

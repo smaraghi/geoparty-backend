@@ -15,7 +15,7 @@ const PreviousQuestions = () => {
         <Item.Group divided={true}>
           {context.previousQuestions.map( (q, index) => <PreviousQuestionItem key={index} question={q} num={index + 1} />)}
         </Item.Group>
-        <Button onClick={context.toggleModalStatus}>End Review</Button>
+        <Button onClick={() => context.setModalStatus(false)}>End Review</Button>
       </Modal.Content>
     </Modal>
   )

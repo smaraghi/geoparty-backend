@@ -5,7 +5,7 @@ class CreateCountries < ActiveRecord::Migration[5.2]
       t.string :profile
       t.string :location
       t.string :continent
-      t.integer :area
+      t.string :area
       t.integer :area_rank
       t.string :comparison
       t.string :border_countries
@@ -14,7 +14,7 @@ class CreateCountries < ActiveRecord::Migration[5.2]
       t.string :lowest_point
       t.string :highest_point
       t.string :natural_resources
-      t.integer :population
+      t.string :population
       t.integer :population_rank
       t.string :nationality
       t.string :languages

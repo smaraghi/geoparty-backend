@@ -11,8 +11,9 @@ class QuestionsController < ApplicationController
     req = open("https://opentdb.com/api.php?amount=#{amount}&category=#{category}&difficulty=#{difficulty}&type=#{type}")
     body = req.read
     json = JSON.parse(body)
-    
+
     format_choices(json)
+    byebug
 
     render json: json
   end

@@ -2,22 +2,22 @@ import React, { useState } from 'react'
 import ShopContext from './shop-context'
 
 const GlobalState = props => {
-  const [user, setUser] = useState({})
-  const [questions, setQuestions] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [questionIndex, setQuestionIndex] = useState(0)
+  const [activeItem, setActiveItem] = useState('overview')
   const [activeQuestion, setActiveQuestion] = useState({})
   const [answered, setAnswered] = useState(false)
-  const [showAnswer, setShowAnswer] = useState(false)
-  const [visible, setVisible] = useState(true)
-  const [correct, setCorrect] = useState(false)
-  const [modalStatus, setModalStatus] = useState(false)
-  const [previousQuestions, setPreviousQuestions] = useState([])
-  const [percentage, setPercentage] = useState(0)
-  const [starAmount, setStarAmount] = useState(0)
   const [avatar, setAvatar] = useState('world.jpg')
   const [bio, setBio] = useState('')
-  const [activeItem, setActiveItem] = useState('overview')
+  const [correct, setCorrect] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [modalStatus, setModalStatus] = useState(false)
+  const [percentage, setPercentage] = useState(0)
+  const [previousQuestions, setPreviousQuestions] = useState([])
+  const [questions, setQuestions] = useState([])
+  const [questionIndex, setQuestionIndex] = useState(0)
+  const [showAnswer, setShowAnswer] = useState(false)
+  const [starAmount, setStarAmount] = useState(0)
+  const [user, setUser] = useState({})
+  const [visible, setVisible] = useState(true)
 
   const fetchQuestions = () => {
     setLoading(true)
@@ -97,10 +97,6 @@ const GlobalState = props => {
     setQuestionIndex(questionIndex + 1)
   }
 
-  const toggleModalStatus = () => {
-    setModalStatus(!modalStatus)
-  }
-
   const addPreviousQuestion = (question, correct) => {
     question.correct = correct
     setPreviousQuestions([...previousQuestions, question])
@@ -122,39 +118,39 @@ const GlobalState = props => {
   return(
     <ShopContext.Provider
       value={{
-        avatar,
         activeItem,
-        bio,
-        user,
-        questions,
-        questionIndex,
         activeQuestion,
+        addPreviousQuestion,
         answered,
-        showAnswer,
-        visible,
-        correct,
-        loading,
-        modalStatus,
-        percentage,
-        starAmount,
-        previousQuestions,
         authenticatingUser,
         authenticatingToken,
-        logoutUser,
-        fetchQuestions,
+        avatar,
+        bio,
+        correct,
         handleQuestionIndex,
-        setAnswered,
+        incrementProgress,
+        incrementStarBar,
+        fetchQuestions,
+        loading,
+        logoutUser,
+        modalStatus,
+        percentage,
+        previousQuestions,
+        questions,
+        questionIndex,
+        saveScore,
         setActiveItem,
+        setAnswered,
         setAvatar,
         setBio,
         setCorrect,
+        setModalStatus,
         setShowAnswer,
         setVisible,
-        saveScore,
-        addPreviousQuestion,
-        toggleModalStatus,
-        incrementProgress,
-        incrementStarBar
+        showAnswer,
+        starAmount,
+        user,
+        visible
       }}>
       { props.children }
     </ShopContext.Provider>
