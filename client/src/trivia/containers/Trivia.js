@@ -19,13 +19,14 @@ const Trivia = () => {
     context.loading ?
     <h1>loading...</h1>
     :
-    <div>
+    <div id='trivia-container'>
       <ProgressBar />
       <StarBar />
       <FlashCard />
       <Options />
       <PreviousQuestions />
       <Image id='globe-image-1' src={require('../../images/globe.jpeg')} alt='globe' />
+      <div id='screen-filler'></div>
     </div>
   )
 }

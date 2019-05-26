@@ -49,6 +49,7 @@
   margin-bottom: 15px;
   font-size: 18px;
   font-family: 'Source Serif Pro', serif;
+ 
 }
 
 #card-button-four{
@@ -87,5 +88,9 @@
 #globe-image-1{
   position: absolute; left: 0; bottom: 0; 
   mix-blend-mode: multiply;
+}
+
+#screen-filler{
+  height: 83px;
 }
 
