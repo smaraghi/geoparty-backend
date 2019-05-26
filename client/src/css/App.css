@@ -1,5 +1,6 @@
 .App{
   font-family: 'Source Serif Pro', serif;
+  background-color: aliceblue;
 }
 
 .ui.header:first-child{

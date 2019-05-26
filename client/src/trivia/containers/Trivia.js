@@ -6,6 +6,7 @@ import shopContext from '../../context/shop-context';
 import ProgressBar from '../components/ProgressBar';
 import StarBar from './StarBar';
 import '../../css/Trivia.css'
+import { Image } from 'semantic-ui-react'
 
 const Trivia = () => {
   const context = useContext(shopContext)
@@ -24,6 +25,7 @@ const Trivia = () => {
       <FlashCard />
       <Options />
       <PreviousQuestions />
+      <Image id='globe-image-1' src={require('../../images/globe.jpeg')} alt='globe' />
     </div>
   )
 }
