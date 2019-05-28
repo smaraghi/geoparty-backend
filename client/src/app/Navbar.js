@@ -11,7 +11,7 @@ const Navbar = () => {
     !isEmpty(context.user) ?
     <Menu >
       <Link to='/about'>
-        <Menu.Item header>
+        <Menu.Item header id='navbar-logo-login'>
           GeoParty &nbsp;
           <Icon name='globe' />
         </Menu.Item>
@@ -38,7 +38,7 @@ const Navbar = () => {
     :
     <Menu>
       <Link to='/about'>
-        <Menu.Item header>
+        <Menu.Item header id='navbar-logo-logout'>
           GeoParty &nbsp;
           <Icon name='globe' />
         </Menu.Item>
