@@ -7,7 +7,7 @@ const Avatar = () => {
     <Segment id="avatar-options">
       <Header>Edit Avatar</Header>
       <Grid>
-        {Array.from(Array(6), (_, i) => <RobotImage key={i} num={i + 1}/>)}
+        {Array.from(Array(8), (_, i) => <RobotImage key={i} num={i + 1}/>)}
       </Grid>
     </Segment>
   )
