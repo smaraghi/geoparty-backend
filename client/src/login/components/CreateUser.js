@@ -72,7 +72,7 @@ const CreateUser = () => {
           onChange={handleBioChange}
           value={bio}
         />
-        <Button type='submit'>Submit</Button>
+        <Button color='violet' type='submit'>Submit</Button>
       </Form>
     </Segment>
   )

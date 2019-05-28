@@ -28,8 +28,8 @@ const Login = () => {
             value={password}
           />
         </Form.Group>
-        <Button type="submit" inverted color="vk">Login</Button>
-        <Link to="/create_account"><Button floated="right" inverted color="linkedin">Create New Account</Button></Link>
+        <Button type="submit" color='violet'>Login</Button>
+        <Link to="/create_account"><Button color='violet' floated="right" >Create New Account</Button></Link>
       </Form>
     </Segment>
   )

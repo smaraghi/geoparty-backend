@@ -61,12 +61,21 @@
   font-family: 'Source Serif Pro', serif;
 }
 
+#flashcard-option-buttons{
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  margin: 24px auto 0px;
+}
+
 #previous-button{
   font-size: 18px;
+  width: 33%;
 }
 
 #next-button{
   font-size: 18px;
+  width: 33%;
 }
 
 .flashcard-question-container{

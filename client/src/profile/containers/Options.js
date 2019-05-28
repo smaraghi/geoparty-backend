@@ -1,7 +1,7 @@
 
 import React, { useState, useContext } from 'react'
 import shopContext from '../../context/shop-context'
-import { Segment, Header, Button, Form } from 'semantic-ui-react'
+import { Segment, Button, Form, Header } from 'semantic-ui-react'
 
 const Options = () => {
   const context = useContext(shopContext)
@@ -26,9 +26,10 @@ const Options = () => {
 
   return (
     <Segment id="profile-options">
-      <Header>Edit Profile</Header>
       {!editingProfile ?
-      <Button onClick={() => setEditingProfile(true)}>Go</Button>
+      <div id='edit-profile-button-container'>
+        <Button id='edit-profile-button' color='violet' onClick={() => setEditingProfile(true)}>Edit Profile</Button>
+      </div>
       :
       <Form
         onSubmit={(e) => {
@@ -38,14 +39,14 @@ const Options = () => {
           handleSubmit()
         }}
       >
+        <Header>Bio</Header>
         <Form.TextArea
-          label='bio'
           name='bio'
           placeholder={context.user.bio}
           onChange={handleBioChange}
           value={bio}
         />
-      <Button type='submit'>Submit</Button>
+      <Button color='violet' type='submit'>Submit</Button>
       </Form>
       }
     </Segment>

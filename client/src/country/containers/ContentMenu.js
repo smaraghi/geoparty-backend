@@ -8,9 +8,9 @@ const ContentMenu = () => {
   return(
     <div>
       <Menu id='content-menu' tabular attached='top'>
-        <Menu.Item name='overview' active={context.activeItem === 'overview'} onClick={() => context.setActiveItem('overview')}/>
-        <Menu.Item name='geography' active={context.activeItem === 'geography'} onClick={() => context.setActiveItem('geography')}/>
-        <Menu.Item name='people' active={context.activeItem === 'people'} onClick={() => context.setActiveItem('people')}/>
+        <Menu.Item name='overview' color='violet' active={context.activeItem === 'overview'} onClick={() => context.setActiveItem('overview')}/>
+        <Menu.Item name='geography' color='violet' active={context.activeItem === 'geography'} onClick={() => context.setActiveItem('geography')}/>
+        <Menu.Item name='people' color='violet' active={context.activeItem === 'people'} onClick={() => context.setActiveItem('people')}/>
       </Menu>
     </div>
   )

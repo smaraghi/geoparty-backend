@@ -15,19 +15,17 @@ const Options = () => {
   }
 
   return(
-    <Grid id='flashcard-option-buttons'>
-      <Grid.Column textAlign="center">
+    <div id='flashcard-option-buttons'>
         <br/>
-        <Button id="previous-button" inverted color="twitter" onClick={() => context.setModalStatus(true)} >Previous Questions</Button>
-        <Button id="next-button" inverted color="vk" onClick={() => {
+        <Button id="previous-button" color="violet" onClick={() => context.setModalStatus(true)} >Previous Questions</Button>
+        <Button id="next-button" color="violet" onClick={() => {
           handleQuestionSkip()
           context.setShowAnswer(false)
           context.setVisible(true)
           context.setAnswered(false)
           context.handleQuestionIndex()
         }}>Next Question</Button>
-      </Grid.Column>
-    </Grid>
+    </div>
   )
 }
 
