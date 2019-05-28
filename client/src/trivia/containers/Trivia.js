@@ -5,6 +5,7 @@ import PreviousQuestions from './PreviousQuestions'
 import shopContext from '../../context/shop-context';
 import ProgressBar from '../components/ProgressBar';
 import StarBar from './StarBar';
+import Loading from '../../app/Loading'
 import '../../css/Trivia.css'
 import { Image } from 'semantic-ui-react'
 
@@ -17,7 +18,7 @@ const Trivia = () => {
 
   return (
     context.loading ?
-    <h1>loading...</h1>
+    <Loading />
     :
     <div id='trivia-container'>
       <ProgressBar />

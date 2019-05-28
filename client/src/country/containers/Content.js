@@ -3,6 +3,7 @@ import Title from '../components/Title'
 import Summary from '../components/Summary'
 import ContentMenu from './ContentMenu'
 import TableSwitch from './TableSwitch';
+import Loading from '../../app/Loading.js'
 
 const Content = (props) => {
   const [countryData, setCountryData] = useState({})
@@ -20,7 +21,7 @@ const Content = (props) => {
 
   return(
     loading ?
-    <h1>loading...</h1>
+    <Loading />
     :
     <div>
       <Title countryName={countryData.name} />
