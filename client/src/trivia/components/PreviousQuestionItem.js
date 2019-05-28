@@ -4,14 +4,14 @@ import { Item } from 'semantic-ui-react'
 const PreviousQuestionItem = props => {
 
   const fillColor = () => {
-    return props.question.correct ? "green" : "red"
+    return props.question.correct ? "blue" : "red"
   }
 
   return (
     <Item>
-      <Item.Content style={{color: fillColor()}}>
+      <Item.Content >
         {props.num}. {props.question.question}
-        <Item.Content>
+        <Item.Content style={{color: fillColor()}}>
         <br/>
           {props.question.correct_answer}
         </Item.Content>

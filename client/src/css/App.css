@@ -25,6 +25,7 @@
 
 .ui.items>.item>.content {
   font-family: 'Source Serif Pro', serif;
+  font-size: 16px;
 }
 
 #navbar-logo-login{
