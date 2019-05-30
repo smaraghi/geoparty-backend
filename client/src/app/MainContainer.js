@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import shopContext from '../context/shop-context'
 import { Route, Switch, Redirect } from 'react-router-dom'
+import About from './About'
 import Country from '../country/containers/Country'
 import Trivia from '../trivia/containers/Trivia'
 import Profile from '../profile/containers/Profile';
@@ -14,7 +15,8 @@ const MainContainer = props => {
   return(
     <div>
       <Switch>
-        <Route exact path='/country' component={Country}/>
+        <Route exact path='/about' component={About} />
+        <Route exact path='/country' component={Country} />
         <Route exact path='/trivia' component={Trivia} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path="/login" render = { (props) => {

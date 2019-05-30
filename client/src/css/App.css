@@ -35,3 +35,28 @@
 #navbar-logo-logout{
   color: #6453c9;
 }
+
+#about-container{
+  padding-bottom: 80px;
+}
+
+#about-header{
+  text-align: center;
+  font-size: 40px;
+}
+
+#about-blurb{
+  width: 60%;
+  font-size: 22px;
+  margin: 50px auto 0px;
+}
+
+#about-authors{
+  width: 80%;
+  margin: 75px auto 0px;
+}
+
+#about-map{
+  margin: 72px auto 0px;
+  mix-blend-mode: multiply;
+}
