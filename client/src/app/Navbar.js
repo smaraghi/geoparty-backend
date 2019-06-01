@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     !isEmpty(context.user) ?
     <Menu >
-      <Link to='/about'>
+      <Link to='/'>
         <Menu.Item header id='navbar-logo-login'>
           GeoParty &nbsp;
           <Icon name='globe' />
@@ -37,7 +37,7 @@ const Navbar = () => {
     </Menu>
     :
     <Menu>
-      <Link to='/about'>
+      <Link to='/'>
         <Menu.Item header id='navbar-logo-logout'>
           GeoParty &nbsp;
           <Icon name='globe' />

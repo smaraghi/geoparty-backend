@@ -36,11 +36,11 @@
   color: #6453c9;
 }
 
-#about-container{
+#home-container{
   margin-top: 300px;
 }
 
-#about-blurb{
+#home-blurb{
   background-color: rgba(100,83,201, .6);
   color: white; 
   width: 60%;
@@ -49,12 +49,12 @@
   z-index: +1;
 }
 
-#about-authors{
+#home-authors{
   width: 80%;
   margin: 75px auto 0px;
 }
 
-#about-map-container{
+#home-map-container{
   position: absolute;
   top: 50px;
   bottom: 0;
@@ -62,7 +62,7 @@
   right: 0;
 }
 
-#about-map{
+#home-map{
   mix-blend-mode: multiply;
   width: 100%;
   height: 100%;
