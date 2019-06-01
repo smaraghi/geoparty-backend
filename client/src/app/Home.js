@@ -1,5 +1,6 @@
 import React from 'react'
 import { Segment, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return(
@@ -10,6 +11,10 @@ const Home = () => {
       <div id='home-map-container'>
         <Image id='home-map'  src={require('../images/world-map.jpg')} alt='world map' />
       </div>
+      <Segment id='home-link-container'>
+        <Link id='home-country-link' to='/country'><p>Explore The World</p></Link>
+        <Link id='home-trivia-link' to='/trivia'>Test Your Skills</Link>
+      </Segment>
     </div>
 	)
 }
