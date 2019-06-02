@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   private
 
   def secret_key
-    "auth"
+    Rails.application.credentials.geoparty[:secret_key]
   end
 
   def encode(payload)
