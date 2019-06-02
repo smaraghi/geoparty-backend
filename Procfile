@@ -1,2 +1,2 @@
-web: cd server && rails s 
+api: cd server && rails s 
 web: cd client && npm start
