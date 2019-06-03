@@ -1,0 +1,16 @@
+Started POST "/login" for ::1 at 2019-06-02 20:08:04 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sarvin/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AuthController#create as JSON
+  Parameters: {"username"=>"Serven", "password"=>"[FILTERED]", "auth"=>{"username"=>"Serven", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Serven"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:7:in `secret_key'
+app/controllers/application_controller.rb:11:in `encode'
+app/controllers/auth_controller.rb:7:in `create'
