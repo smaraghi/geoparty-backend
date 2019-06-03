@@ -2730,3 +2730,82 @@ Processing by QuestionsController#get_trivia as */*
 Completed 200 OK in 234ms (Views: 22.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/verify_token" for ::1 at 2019-06-02 20:52:28 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sarvin/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#token as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 73ms (Views: 13.5ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/login" for ::1 at 2019-06-02 20:52:37 -0400
+Processing by AuthController#create as JSON
+  Parameters: {"username"=>"Serven", "password"=>"[FILTERED]", "auth"=>{"username"=>"Serven", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Serven"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 202 Accepted in 256ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/4" for ::1 at 2019-06-02 20:52:40 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"avatar"=>"Robot-2.png", "id"=>"4", "user"=>{"avatar"=>"Robot-2.png"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Serven"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "avatar" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["avatar", "Robot-2.png"], ["updated_at", "2019-06-03 00:52:40.764042"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 204 No Content in 13ms (ActiveRecord: 5.7ms)
+
+
+Started PATCH "/users/4" for ::1 at 2019-06-02 20:52:41 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"avatar"=>"Robot-2.png", "id"=>"4", "user"=>{"avatar"=>"Robot-2.png"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Serven"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 204 No Content in 4ms (ActiveRecord: 1.1ms)
+
+
+Started PATCH "/users/4" for ::1 at 2019-06-02 20:52:42 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"avatar"=>"Robot-3.png", "id"=>"4", "user"=>{"avatar"=>"Robot-3.png"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Serven"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "avatar" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["avatar", "Robot-3.png"], ["updated_at", "2019-06-03 00:52:42.286103"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 204 No Content in 7ms (ActiveRecord: 2.3ms)
+
+
+Started PATCH "/users/4" for ::1 at 2019-06-02 20:52:45 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"bio"=>"Crazy, I like to eat", "id"=>"4", "user"=>{"bio"=>"Crazy, I like to eat"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Serven"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+Completed 204 No Content in 5ms (ActiveRecord: 1.4ms)
+
+
