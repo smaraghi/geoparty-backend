@@ -2,29 +2,29 @@ notes.txt
 
 # server files
 
-server/log/*
+log/*
 
 # Ignore bundler config.
-server/.bundle
+.bundle
 
 # Ignore the default SQLite database.
-server/db/*.sqlite3
-server/db/*.sqlite3-journal
+db/*.sqlite3
+db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-server/log/*
-server/tmp/*
-!server/log/.keep
-!server/tmp/.keep
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
 
 # Ignore uploaded files in development
-server/storage/*
-!server/storage/.keep
+storage/*
+!storage/.keep
 
-server/.byebug_history
+.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-server/config/master.key
+config/master.key
 
 # client files
 
@@ -51,4 +51,4 @@ client/yarn-debug.log*
 client/yarn-error.log*
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+config/master.key
