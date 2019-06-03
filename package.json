@@ -4,7 +4,7 @@
       "node": "10.16.0"
     },
     "scripts": {
-      "start": "cd client && npm start"
+      "start": "cd client && npm i && npm start"
     }
   }
   
