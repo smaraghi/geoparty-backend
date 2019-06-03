@@ -49,3 +49,6 @@ client/.env.production.local
 client/npm-debug.log*
 client/yarn-debug.log*
 client/yarn-error.log*
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
