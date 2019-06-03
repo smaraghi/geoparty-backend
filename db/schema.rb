@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_134519) do
+ActiveRecord::Schema.define(version: 2019_05_15_134226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.text "description"
-    t.string "url"
-    t.string "image"
-    t.string "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "likes"
-    t.integer "dislikes"
-  end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -49,21 +36,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_134519) do
     t.string "religions"
     t.string "major_cities"
     t.string "capital"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.text "body"
-    t.string "solution"
-    t.string "choices"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_questions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
