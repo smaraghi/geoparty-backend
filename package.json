@@ -1,0 +1,10 @@
+{
+    "name": "geoparty",
+    "engines": {
+      "node": "10.16.0"
+    },
+    "scripts": {
+      "start": "cd client && npm start"
+    }
+  }
+  
