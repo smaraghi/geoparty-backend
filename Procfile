@@ -1,1 +1,1 @@
-rails s 
+bundle exec rails server -p $PORT
