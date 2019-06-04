@@ -1,9 +1,0 @@
-{
-  "name": "geoparty",
-  "engines": {
-
-  },
-  "scripts": {
-    "start": "cd client && npm i && npm start"
-  }
-}
