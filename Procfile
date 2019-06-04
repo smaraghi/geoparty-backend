@@ -1,1 +1,1 @@
-api: bundle exec rails s 
+rails s 
